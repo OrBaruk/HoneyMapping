@@ -21,7 +21,7 @@ var Map = {
 						stroke: '#383f47'
 					}
 				},
-				*/				
+				*/
 
 				backgroundColor: '#383f47',
 
@@ -31,15 +31,11 @@ var Map = {
 					markers: [{
 						attribute: 'fill',
 						scale: ['#FEE5D9', '#A50F15'],
-						values: count// markers[val].count
-						//min: 1,
-						//max: 200
+						values: count
 					},{
 						attribute: 'r',
 						scale: [5,20],
-						values: count// markers[val].count
-						//min: 1,
-						//max: 200
+						values: count
 					}]
 				},
 
@@ -64,16 +60,21 @@ var Map = {
 			$("#slider").slider({
 				value: val,
 				min: 0,
-				max: markers.length - 1,
+				max: markers.length,
+				animated: true,
 				step: 1,
 				slide: function( event, ui ){
 					val = ui.value;
-					if ( val == 0) {
+					if ( val == markers.length) {
 						mapObject.removeAllMarkers();
 						mapObject.addMarkers( markers);
+						mapObject.series.markers[0].setValues(count);
+						mapObject.series.markers[1].setValues(count);
 					} else{
 						mapObject.removeAllMarkers();
-						mapObject.addMarker( val, markers[val - 1]);
+						mapObject.addMarker( val, markers[val]);
+						mapObject.series.markers[0].setValues(count);
+						mapObject.series.markers[1].setValues(count);
 					}					
 				}
 			});

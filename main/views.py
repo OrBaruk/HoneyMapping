@@ -11,6 +11,7 @@ import GeoIP
 import json
 ############################
 
+
 class LogEntry:
 	name = 'Unknonw Name'
 	port = 0
