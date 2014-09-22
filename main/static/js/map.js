@@ -2,6 +2,24 @@ var Map = {
 
 	init: function (markers, count){
 		$(function(){
+			jQuery(document).ready(function(){
+				jQuery('#button-9')
+				.button({
+					icons: { 
+						primary: 'ui-icon-play'
+					},
+					text: false
+				})
+				.click(function animacao (){
+					console.log("play!");
+					val += 1;
+					$( "#slider" ).slider( "value", val );
+					if( val < markers.length){
+						setTimeout(animacao, 1000);
+					}
+				});
+			});
+
 			var val = 0;
 
 			console.log(markers);
@@ -14,15 +32,6 @@ var Map = {
 				hoverOpacity: 0.7,
 				hoverColor: false,
 
-				/*
-				markerStyle: {
-					initial: {
-						fill: '#F8E23B',
-						stroke: '#383f47'
-					}
-				},
-				*/
-
 				backgroundColor: '#383f47',
 
 				markers: markers,
@@ -34,7 +43,7 @@ var Map = {
 						values: count
 					},{
 						attribute: 'r',
-						scale: [5,20],
+						scale: [5,10],
 						values: count
 					}]
 				},
@@ -44,7 +53,6 @@ var Map = {
 					'<p>City: '+markers[index].city+'</p>'+
 					'<p>Type: '+markers[index].name+'</p>'+
 					'<p>Port: '+markers[index].port+'</p>'+
-					// '<p>IP: '  +markers[index].ip+'</p>'+
 					'<p>count: ' +markers[index].count+'</p>'
 				);
 				},

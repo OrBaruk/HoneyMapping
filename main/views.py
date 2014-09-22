@@ -95,7 +95,27 @@ def jvectormap(request):
 	for le in markers:
 		count.append(le['count'])
 
+	pd = dict()
+
+	# Count by the attacks type
+	for le in markers:
+		key = le['name']+':'+le['port']
+		if key in pd:
+			pd[key] += le['count']
+		else:
+			pd[key] = le['count']
+
+	# Translate pd to the json format expected by d3.js
+	piedata = []
+	for key in pd:
+		d = dict()
+		d['label'] = key
+		d['value'] = pd[key]
+
+		piedata.append(d)
+
 	return render(request, 'main/jvectormap.html', {
 			'markers' : json.dumps(markers),
 			'count' : json.dumps(count),
+			'piedata' : json.dumps(piedata),
 		})
