@@ -8,11 +8,11 @@
 	<script src="{{ STATIC_URL }}jslib/jquery-1.8.2.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-1.2.2.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-world-mill-en.js"></script>
-	<script src="{{ STATIC_URL }}jslib/jquery-ui.js"></script>
+	<script src="{{ STATIC_URL }}jslib/jquery-ui.min.js"></script>
 </head>
 <body>
-	<div id="world-map" style="width: 700px; height: 450px;" align="center"></div>
-	<div id="slider" style="width: 700px; height: 10px; margin-top: 15px;"align="center"></div>
+	<div id="world-map" style="width: 1400px; height: 650px;" align="center"></div>
+	<div id="slider" style="width: 1400px; height: 10px; margin-top: 15px;"align="center"></div>
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
@@ -22,8 +22,8 @@
 	</script>
 
 
-	<div id="piechart">
-		<svg id = "chartsvg" style="width: 700px; height: 450px" align="center"></svg>
+	<div id="piechart" align="center">
+		<svg id = "chartsvg" style="width: 1400px; height: 250px"></svg>
 	</div>
 	<script src="{{ STATIC_URL }}jslib/d3.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/nv.d3.js"></script>
@@ -34,7 +34,7 @@
 			var chart = nv.models.pieChart()
 				.x(function(d) { return d.label })
 				.y(function(d) { return d.value })
-				.showLabels(true);
+				.showLabels(false);
 
 			d3.select("#chartsvg")
 				.datum(piedata)
