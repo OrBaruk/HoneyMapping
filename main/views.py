@@ -4,7 +4,6 @@ from django.template import RequestContext, loader
 from django.shortcuts import render, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.views import generic
-from polls.models import Poll
 
 ############################
 import GeoIP
@@ -73,10 +72,6 @@ def parse_logs(filepath, geoIPLibpath):
 
 # Create your views here.
 def index(request):
-	return render(request, 'main/index.html')
-
-
-def jvectormap(request):
 	markers = []
 	count = []
 	d = parse_logs('data/logs.txt', '/usr/local/share/GeoIP/GeoIPCity.dat')
@@ -114,7 +109,7 @@ def jvectormap(request):
 
 		piedata.append(d)
 
-	return render(request, 'main/jvectormap.html', {
+	return render(request, 'main/index.html', {
 			'markers' : json.dumps(markers),
 			'count' : json.dumps(count),
 			'piedata' : json.dumps(piedata),
