@@ -2,24 +2,6 @@ var Map = {
 
 	init: function (markers, count){
 		$(function(){
-			jQuery(document).ready(function(){
-				jQuery('#button-9')
-				.button({
-					icons: { 
-						primary: 'ui-icon-play'
-					},
-					text: false
-				})
-				.click(function animacao (){
-					console.log("play!");
-					val += 1;
-					$( "#slider" ).slider( "value", val );
-					if( val < markers.length){
-						setTimeout(animacao, 1000);
-					}
-				});
-			});
-
 			var val = 0;
 
 			console.log(markers);
