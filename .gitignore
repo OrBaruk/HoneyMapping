@@ -6,3 +6,4 @@
 *.lock
 *.sublime*
 *.pyc
+db.sqlite3
