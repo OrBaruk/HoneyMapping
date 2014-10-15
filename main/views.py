@@ -83,7 +83,10 @@ def index(request):
 		le['ip'] = d[key].ip
 		le['count'] = len(d[key].key)
 		le['latLng'] = d[key].latLng
-		le['city'] = d[key].city
+		if d[key].city:
+			le['city'] = d[key].city
+		else:
+			le['city'] = 'Unknonw'
 
 		markers.append(le)
 

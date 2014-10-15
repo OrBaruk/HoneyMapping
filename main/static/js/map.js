@@ -35,7 +35,7 @@ var Map = {
 					'<p>City: '+markers[index].city+'</p>'+
 					'<p>Type: '+markers[index].name+'</p>'+
 					'<p>Port: '+markers[index].port+'</p>'+
-					'<p>count: ' +markers[index].count+'</p>'
+					'<p>Packets received: ' +markers[index].count+'</p>'
 				);
 				},
 				onRegionLabelShow: function(event, label, code){
