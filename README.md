@@ -1,17 +1,24 @@
---- Initial prototype implementation of HoneyMappig---
+Initial prototype implementation of HoneyMapping
+------------------
 
-Requirements:
-	django
-	python
-	python-dev
-	geoip
+**Requirements:**
+- django
+- python
+- python-dev
+- geoip
 
-Usage:
-	To run server for local access only
+**Usage:**
+- To run server execute the following inside the project folder:
+	```
 	python manage.py runserver 127.0.0.1:8000
+	```
 
-	logs are located at:
+- logs are located at:
+	```
 	{project_folder}/data/logs.txt
+	```
 
-	Main page html at:
+- Main page html at:
+	```
 	{project_folder}/main/templates/main/index.html
+	```
