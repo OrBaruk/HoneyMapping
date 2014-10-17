@@ -56,11 +56,18 @@ def parse_logs(filepath, geoIPLibpath):
 			continue 
 
 		gir = gi.record_by_addr(rows[2])
+		if gir:
+			key = rows[0]+';'+rows[1]+';'+str(gir['latitude'])+';'+str(gir['longitude'])
+			if gir['city']:
+				city =  unicode(gir['city'], 'latin-1') # Converte a string de Latin-1 segundo a documentacao do GeoIP
+			else:
+				city = 'Unknonw'
 
-		key = rows[0]+';'+rows[1]+';'+str(gir['latitude'])+';'+str(gir['longitude'])
-		city =  gir['city']
-		latLng = [gir['latitude'], gir['longitude']]
-		
+			latLng = [gir['latitude'], gir['longitude']]
+		else:
+			print "Error on gir"
+
+
 		if key in d:
 			d[key].add_entry([rows[2]], [rows[3]],['datahora'])
 		else:
@@ -83,10 +90,8 @@ def index(request):
 		le['ip'] = d[key].ip
 		le['count'] = len(d[key].key)
 		le['latLng'] = d[key].latLng
-		if d[key].city:
-			le['city'] = d[key].city
-		else:
-			le['city'] = 'Unknonw'
+		le['city'] = d[key].city
+
 
 		markers.append(le)
 
