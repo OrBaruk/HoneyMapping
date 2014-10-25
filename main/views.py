@@ -19,8 +19,9 @@ class LogEntry:
 	date  = [] # Precisa ver qual lib de python utilizar
 	city = 'Unknonw City'
 	latLng = [0,0]
+	countryCode = ''
 
-	def __init__(self, name_, port_, ip_, key_, date_, city_, latLng_):
+	def __init__(self, name_, port_, ip_, key_, date_, city_, latLng_, countryCode_):
 		self.name = name_
 		self.port = port_ 
 		self.ip = ip_ 
@@ -28,6 +29,7 @@ class LogEntry:
 		self.date = date_ 
 		self.city = city_
 		self.latLng = latLng_
+		self.countryCode = countryCode_
 
 
 	def add_entry(self, ip_, key_, date_):
@@ -59,11 +61,13 @@ def parse_logs(filepath, geoIPLibpath):
 		if gir:
 			key = rows[0]+';'+rows[1]+';'+str(gir['latitude'])+';'+str(gir['longitude'])
 			if gir['city']:
-				city =  unicode(gir['city'], 'latin-1') # Converte a string de Latin-1 segundo a documentacao do GeoIP
+				city =  unicode(gir['city'], 'latin1') # Converte a string de Latin-1 segundo a documentacao do GeoIP
 			else:
 				city = 'Unknonw'
 
 			latLng = [gir['latitude'], gir['longitude']]
+			countryCode = unicode(gir['country_code'], 'latin1')
+
 		else:
 			print "Error on gir"
 
@@ -71,7 +75,7 @@ def parse_logs(filepath, geoIPLibpath):
 		if key in d:
 			d[key].add_entry([rows[2]], [rows[3]],['datahora'])
 		else:
-			d[key] = LogEntry(rows[0], rows[1], [rows[2]], [rows[3]], ['datahora'], city, latLng )
+			d[key] = LogEntry(rows[0], rows[1], [rows[2]], [rows[3]], ['datahora'], city, latLng, countryCode)
 		
 	f.close()
 
@@ -79,8 +83,11 @@ def parse_logs(filepath, geoIPLibpath):
 
 # Create your views here.
 def index(request):
+	# Arrays data are passed to map.js
 	markers = []
 	count = []
+	regions = dict()
+
 	d = parse_logs('data/logs.txt', '/usr/local/share/GeoIP/GeoIPCity.dat')
 
 	for key in d.keys():
@@ -92,6 +99,13 @@ def index(request):
 		le['latLng'] = d[key].latLng
 		le['city'] = d[key].city
 
+		cc = d[key].countryCode
+		le['countryCode'] = cc
+
+		if cc in regions:
+			regions[cc] += le['count']
+		else:
+			regions[cc] = le['count']
 
 		markers.append(le)
 
@@ -119,6 +133,7 @@ def index(request):
 
 	return render(request, 'main/index.html', {
 			'markers' : json.dumps(markers),
-			'count' : json.dumps(count),
+			'count'   : json.dumps(count),
+			'regions' : json.dumps(regions),
 			'piedata' : json.dumps(piedata),
 		})

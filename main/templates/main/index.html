@@ -17,9 +17,10 @@
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
-		var markers = {{ markers | safe }}
-		var count = {{ count | safe }}
-		Map.init(markers, count);
+		var markers = {{ markers | safe }};
+		var count = {{ count | safe }};
+		var regions = {{ regions | safe }};
+		Map.init(markers, count, regions);
 	</script>
 
 
@@ -30,6 +31,8 @@
 	<script src="{{ STATIC_URL }}jslib/nv.d3.js"></script>
 	<script type="text/javascript">
 		var piedata = {{ piedata | safe}}
+
+		console.log(piedata);
 
 		nv.addGraph(function() {
 			var chart = nv.models.pieChart()
