@@ -7,6 +7,12 @@ var Map = {
 			console.log(markers);
 			console.log(count);
 
+			// Internal value used to set the same opacity for each marker
+			var opacity = [];
+			for (var i = 0; i < count.length; i++) {
+				opacity[i] = 0.5
+			};
+
 			mapObject = $('#world-map').vectorMap({
 				map: 'world_mill_en',
 				scaleColors: ['#C8EEFF', '#0071A4'],	
@@ -14,18 +20,23 @@ var Map = {
 				hoverOpacity: 0.7,
 				hoverColor: false,
 
-				backgroundColor: '#383f47',
+				backgroundColor: '#647284',
 
 				markers: markers,
 
 				series: {
 					markers: [{
 						attribute: 'fill',
-						scale: ['#FEE5D9', '#A50F15'],
+						scale: ['#8385ff', '#0014ff'],
 						values: count
-					},{
+					},
+					{
+						attribute: 'fill-opacity',
+						values: opacity
+					},
+					{
 						attribute: 'r',
-						scale: [5,10],
+						scale: [10,15],
 						values: count
 					}]
 				},
