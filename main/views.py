@@ -90,13 +90,11 @@ def index(request):
 
 	d = parse_logs('data/logs.txt', '/usr/local/share/GeoIP/GeoIPCity.dat')
 
-
 	i = 0
 	countSet = []
 	markersSet = []
 	regionsSet = dict()
 	for key in d.keys():
-		print key
 		if i == 10:
 			i = 0;
 			markers.append(markersSet)
@@ -108,10 +106,8 @@ def index(request):
 
 		le = dict()
 		le['name'] = d[key].name
-		print le['name']
 		le['port'] = d[key].port
 		le['ip'] = d[key].ip
-		print le['ip']
 		le['count'] = len(d[key].key)
 		le['latLng'] = d[key].latLng
 		le['city'] = d[key].city
@@ -131,15 +127,13 @@ def index(request):
 			countSet.append(le['count'])
 
 		i += 1
-
 	markers.append(markersSet)
 	count.append(countSet)
 	regions.append(regionsSet)
 
-	print len(d.keys())
+
 
 	pd = dict()
-
 	# Count by the attacks type
 	for markersSet in markers:
 		for le in markersSet:
