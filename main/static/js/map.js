@@ -4,8 +4,32 @@ var Map = {
 		$(function(){
 			var val = 0;
 
+			jQuery(document).ready(function(){
+				jQuery('#button-9')
+				.button({
+					icons: { 
+						primary: 'ui-icon-play'
+					},
+					text: false
+				})
+				.click(function animation (){
+					val = val + 1;
+					
+					$( "#slider" ).slider( "value", val );
+					mapObject.reset();
+					mapObject.addMarkers(markers[val]);
+					mapObject.series.markers[0].setValues(colorData[val]);
+					mapObject.series.markers[1].setValues(opacityData[val]);
+					mapObject.series.markers[2].setValues(radiusData[val]);
+					mapObject.series.regions[0].setValues(regionsData[val]);
+
+					if( val != markers.length - 1){										
+						setTimeout(animation, 1000);
+					}
+				});
+			});
+
 			console.log(markers);
-			
 			// Internal value used to set the same opacity for each marker
 			var opacityData = [];
 			var colorData =[];
@@ -25,7 +49,7 @@ var Map = {
 
 			
 			// This section is where you can customize most of the looks of the map
-			mapObject = $('#world-map').vectorMap({
+			var mapObject = $('#world-map').vectorMap({
 				map: 'world_mill_en',
 				scaleColors: ['#C8EEFF', '#0071A4'],	
 				normalizeFunction: 'polynomial',
@@ -87,7 +111,7 @@ var Map = {
 				value: val,
 				min: 0,
 				max: markers.length - 1,
-				animated: true,
+				animate: true,
 				step: 1,
 				slide: function( event, ui ){
 					val = ui.value;
@@ -96,7 +120,7 @@ var Map = {
 					mapObject.series.markers[0].setValues(colorData[val]);
 					mapObject.series.markers[1].setValues(opacityData[val]);
 					mapObject.series.markers[2].setValues(radiusData[val]);
-					mapObject.series.regions[0].setValues(regionsData[val]);
+					mapObject.series.regions[0].setValues(regionsData[val]);				
 				}
 			});
 
