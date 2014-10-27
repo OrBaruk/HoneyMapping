@@ -18,7 +18,7 @@
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
 		var markers = {{ markers | safe }};
-		var count = {{ count | safe }};
+		var count 	= {{ count | safe }};
 		var regions = {{ regions | safe }};
 		Map.init(markers, count, regions);
 	</script>
