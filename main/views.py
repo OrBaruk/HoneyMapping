@@ -86,15 +86,32 @@ def index(request):
 	# Arrays data are passed to map.js
 	markers = []
 	count = []
-	regions = dict()
+	regions = []
 
 	d = parse_logs('data/logs.txt', '/usr/local/share/GeoIP/GeoIPCity.dat')
 
+
+	i = 0
+	countSet = []
+	markersSet = []
+	regionsSet = dict()
 	for key in d.keys():
+		print key
+		if i == 10:
+			i = 0;
+			markers.append(markersSet)
+			count.append(countSet)
+			regions.append(regionsSet)
+			countSet = []
+			markersSet = []
+			regionsSet = dict()
+
 		le = dict()
 		le['name'] = d[key].name
+		print le['name']
 		le['port'] = d[key].port
 		le['ip'] = d[key].ip
+		print le['ip']
 		le['count'] = len(d[key].key)
 		le['latLng'] = d[key].latLng
 		le['city'] = d[key].city
@@ -102,25 +119,35 @@ def index(request):
 		cc = d[key].countryCode
 		le['countryCode'] = cc
 
-		if cc in regions:
-			regions[cc] += le['count']
+		if cc in regionsSet:
+			regionsSet[cc] += le['count']
 		else:
-			regions[cc] = le['count']
+			regionsSet[cc] = le['count']
 
-		markers.append(le)
+		markersSet.append(le)
 
-	for le in markers:
-		count.append(le['count'])
+
+		for le in markersSet:
+			countSet.append(le['count'])
+
+		i += 1
+
+	markers.append(markersSet)
+	count.append(countSet)
+	regions.append(regionsSet)
+
+	print len(d.keys())
 
 	pd = dict()
 
 	# Count by the attacks type
-	for le in markers:
-		key = le['name']+':'+le['port']
-		if key in pd:
-			pd[key] += le['count']
-		else:
-			pd[key] = le['count']
+	for markersSet in markers:
+		for le in markersSet:
+			key = le['name']+':'+le['port']
+			if key in pd:
+				pd[key] += le['count']
+			else:
+				pd[key] = le['count']
 
 	# Translate pd to the json format expected by d3.js
 	piedata = []
