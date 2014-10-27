@@ -16,6 +16,7 @@ var Map = {
 					val = val + 1;
 					
 					$( "#slider" ).slider( "value", val );
+					mapObject.removeAllMarkers();
 					mapObject.reset();
 					mapObject.addMarkers(markers[val]);
 					mapObject.series.markers[0].setValues(colorData[val]);
@@ -29,7 +30,6 @@ var Map = {
 				});
 			});
 
-			console.log(markers);
 			// Internal value used to set the same opacity for each marker
 			var opacityData = [];
 			var colorData =[];
@@ -46,6 +46,11 @@ var Map = {
 				opacityData[i] = opacityAux;
 				colorData[i] = colorAux;
 			};
+
+			console.log(markers);
+			console.log(opacityData);
+			console.log(colorData);
+
 
 			
 			// This section is where you can customize most of the looks of the map
@@ -90,6 +95,8 @@ var Map = {
 				},
 
 				onMarkerLabelShow: function(event, label, index){
+				console.log(val);
+				console.log(index);
 				label.html(
 					'<p>City: '+markers[val][index].city+'</p>'+
 					'<p>Type: '+markers[val][index].name+'</p>'+
@@ -115,6 +122,7 @@ var Map = {
 				step: 1,
 				slide: function( event, ui ){
 					val = ui.value;
+					mapObject.removeAllMarkers();
 					mapObject.reset();
 					mapObject.addMarkers(markers[val]);
 					mapObject.series.markers[0].setValues(colorData[val]);
