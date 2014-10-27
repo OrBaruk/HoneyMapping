@@ -25,12 +25,13 @@ var Map = {
 					mapObject.series.regions[0].setValues(regionsData[val]);
 
 					if( val != markers.length - 1){										
-						setTimeout(animation, 1000);
+						setTimeout(animation, 500);
 					}
 				});
 			});
 
 			// Internal value used to set the same opacity for each marker
+			// This computation in the future should be done by the server and cached
 			var opacityData = [];
 			var colorData =[];
 
@@ -48,20 +49,16 @@ var Map = {
 			};
 
 			console.log(markers);
-			console.log(opacityData);
-			console.log(colorData);
-
-
 			
 			// This section is where you can customize most of the looks of the map
 			var mapObject = $('#world-map').vectorMap({
 				map: 'world_mill_en',
-				scaleColors: ['#C8EEFF', '#0071A4'],	
+				// scaleColors: ['#C8EEFF', '#0071A4'],	
 				normalizeFunction: 'polynomial',
 				hoverOpacity: 0.7,
 				hoverColor: false,
 
-				backgroundColor: '#647284',
+				backgroundColor: '#6699cc',
 
 				markers: markers[val],
 
@@ -71,10 +68,12 @@ var Map = {
 
 						// Sets up the colors for each attack type, maybe a more elegant solution can be done in the future
 						scale: {
-							'smbd' : '#ff0000',
-							'httpd' : '#00ff04',
-							'epmapper' : '#0021ff',
-							'mssqld' : '#fff500'
+							'smbd' : '#0000ff',
+							'httpd' : '#00ff00',
+							'mssqld' : '#ff8000',
+							'epmapper' : '#ff0080',
+							'ftpd' : '#66ffff',
+							'SipSession' : '#ff0000'
 						},
 						values: colorData[val]
 					},
@@ -84,31 +83,33 @@ var Map = {
 					},
 					{
 						attribute: 'r',
-						scale: [10,15],
+						scale: [5,15],
 						values: radiusData[val]
 					}],
 
 					regions: [{
-						scale: ['#b9b9ff','#0000ff'],
+						// FIX: For some reason when the count of packets is 1 the color becomes black, probably requiser to change the scaling fucntion
+						scale: ['#ffcccc','#996666'],
 						values: regionsData[val]
 					}]
 				},
 
 				onMarkerLabelShow: function(event, label, index){
-				console.log(val);
-				console.log(index);
-				label.html(
-					'<p>City: '+markers[val][index].city+'</p>'+
-					'<p>Type: '+markers[val][index].name+'</p>'+
-					'<p>Port: '+markers[val][index].port+'</p>'+
-					'<p>Packets Sent: ' +markers[val][index].radiusData+'</p>'
-				);
+					label.html(
+						'<p>City: '+markers[val][index].city+'</p>'+
+						'<p>Type: '+markers[val][index].name+'</p>'+
+						'<p>Port: '+markers[val][index].port+'</p>'+
+						'<p>Packets Sent: ' +markers[val][index].radiusData+'</p>'
+					);
 				},
+
 				onRegionLabelShow: function(event, label, code){
-				label.html(
-					'<b>'+label.html()+'</b></br>'+
-					'<p>Packets Sent: '+regionsData[val][code]+'</p>'
-				);
+					if (regionsData[val][code]){
+						label.html(
+							'<b>'+label.html()+'</b></br>'+
+							'<p>Packets Sent: '+regionsData[val][code]+'</p>'
+						);
+					};
 				}
 			});
 
