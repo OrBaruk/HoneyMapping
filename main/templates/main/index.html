@@ -18,10 +18,10 @@
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
-		var markers = {{ markers | safe }};
-		var count 	= {{ count | safe }};
-		var regions = {{ regions | safe }};
-		Map.init(markers, count, regions);
+		$.getJSON("{{ STATIC_URL }}json/mapdata.json", function(json) {
+			Map.init(json['markers'], json['count'], json['regions']);
+		});
+
 	</script>
 
 
@@ -31,22 +31,22 @@
 	<script src="{{ STATIC_URL }}jslib/d3.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/nv.d3.js"></script>
 	<script type="text/javascript">
-		var piedata = {{ piedata | safe}}
+		$.getJSON("{{ STATIC_URL }}json/piedata.json", function(piedata){
+			console.log(piedata);
 
-		console.log(piedata);
+			nv.addGraph(function() {
+				var chart = nv.models.pieChart()
+					.x(function(d) { return d.label })
+					.y(function(d) { return d.value })
+					.showLabels(false);
 
-		nv.addGraph(function() {
-			var chart = nv.models.pieChart()
-				.x(function(d) { return d.label })
-				.y(function(d) { return d.value })
-				.showLabels(false);
+				d3.select("#chartsvg")
+					.datum(piedata)
+					.transition().duration(350)
+					.call(chart);
 
-			d3.select("#chartsvg")
-				.datum(piedata)
-				.transition().duration(350)
-				.call(chart);
-
-		  return chart;
+				return chart;
+			});
 		});
 	</script>
 </body>

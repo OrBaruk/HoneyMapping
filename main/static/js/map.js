@@ -98,8 +98,8 @@ var Map = {
 					label.html(
 						'<p>City: '+markers[val][index].city+'</p>'+
 						'<p>Type: '+markers[val][index].name+'</p>'+
-						'<p>Port: '+markers[val][index].port+'</p>'+
-						'<p>Packets Sent: ' +markers[val][index].radiusData+'</p>'
+						'<p>Port: '+markers[val][index].port+'</p>'
+						// '<p>Packets Sent: '+markers[val][index].+'</p>'
 					);
 				},
 
