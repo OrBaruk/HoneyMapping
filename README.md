@@ -18,6 +18,11 @@ Initial prototype implementation of HoneyMapping
 	{project_folder}/data/logs.txt
 	```
 
+- to reparse the logs:
+	```
+	python parser.py
+	```
+
 - Main page html at:
 	```
 	{project_folder}/main/templates/main/index.html
