@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class ipLocation(models.Model):
+class IpLocation(models.Model):
 	ip = models.GenericIPAddressField(protocol='IPv4',
 									  unpack_ipv4=False,
 									  unique=True,
@@ -14,14 +14,32 @@ class ipLocation(models.Model):
 	def __unicode__(self): # __unicode__ on Python 2
 		return self.cityName+'['+self.latitude+','+self.longitude+']'
 
-class attack(models.Model):
-	key = models.CharField(max_length=255, 
-						   unique=True,
-						   primary_key=True) # Chech the maxlength of hash
-	date = models.DateField()
-	location = models.ForeignKey(ipLocation)
+	class Meta:
+		db_table = 'ip_locations'
+
+class Target(models.Model):
+	id = models.AutoField(primary_key=True)
+	location = models.ForeignKey(IpLocation)
 	port = models.IntegerField()
-	name = models.CharField(max_length=255)
+	collector = models.CharField(max_length=255)
+	protocol = models.CharField(max_length=255)
+
+	class Meta:
+		db_table		= 'targets'
+		unique_together = ('port','location','collector','protocol')
 
 	def __unicode__(self): # __unicode__ on Python 2
-		return self.name+":"+self.port+'['+self.key+']'
+		return self.collector+":"+self.port+'['+self.protocol+']'
+
+class Attack(models.Model):
+	key = models.CharField(max_length=255, 
+	        			   unique=True,
+	        			   primary_key=True) # Chech the maxlength of hash
+	dateTime	= models.DateTimeField()
+	target  	= models.ForeignKey(Target)
+
+	def __unicode__(self): # __unicode__ on Python 2
+		return self.attack+":"+self.key+'['+self.dateTime+']'
+
+	class Meta:
+		db_table = 'attacks'

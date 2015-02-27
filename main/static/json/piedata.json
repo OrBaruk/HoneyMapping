@@ -1,1 +1,1 @@
-[{"value": 24, "label": "ftpd:21"}, {"value": 587371, "label": "smbd:445"}, {"value": 34, "label": "epmapper:135"}, {"value": 12, "label": "SipSession:5060"}, {"value": 2110, "label": "httpd:80"}, {"value": 1811, "label": "mssqld:1433"}]
+[{"value": 1, "label": "epmapper:135"}, {"value": 10, "label": "mssqld:1433"}, {"value": 18206, "label": "smbd:445"}, {"value": 15, "label": "httpd:80"}]
