@@ -11,13 +11,13 @@ class IpLocation(models.Model):
 	cityName =	models.CharField(max_length=255)
 	countryCode = models.CharField(max_length=2)
 
-	def __unicode__(self): # __unicode__ on Python 2
+	def __str__(self): 
 		return self.cityName+'['+self.latitude+','+self.longitude+']'
 
 	class Meta:
 		db_table = 'ip_locations'
 
-class Target(models.Model):
+class Source(models.Model):
 	id = models.AutoField(primary_key=True)
 	location = models.ForeignKey(IpLocation)
 	port = models.IntegerField()
@@ -25,10 +25,10 @@ class Target(models.Model):
 	protocol = models.CharField(max_length=255)
 
 	class Meta:
-		db_table		= 'targets'
+		db_table		= 'sources'
 		unique_together = ('port','location','collector','protocol')
 
-	def __unicode__(self): # __unicode__ on Python 2
+	def __str__(self): 
 		return self.collector+":"+self.port+'['+self.protocol+']'
 
 class Attack(models.Model):
@@ -36,10 +36,10 @@ class Attack(models.Model):
 	        			   unique=True,
 	        			   primary_key=True) # Chech the maxlength of hash
 	dateTime	= models.DateTimeField()
-	target  	= models.ForeignKey(Target)
+	source  	= models.ForeignKey(Source)
 
-	def __unicode__(self): # __unicode__ on Python 2
-		return self.attack+":"+self.key+'['+self.dateTime+']'
+	def __str__(self): 
+		return '['+str(self.dateTime)+']'+str(self.key)
 
 	class Meta:
 		db_table = 'attacks'
