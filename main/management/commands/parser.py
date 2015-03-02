@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from main.models import IpLocation, Attack, Target
+from main.models import IpLocation, Attack, Source
 
 import GeoIP
 import json
@@ -14,7 +14,7 @@ class Command(BaseCommand):
 		self.stdout.write('Hello handle')
 
 		#call function to parse the logs
-		parse_logs('/Users/or/LAS/HoneyMapping/data/acme.txt', 'testing_logparser', '/usr/local/share/GeoIP/GeoIPCity.dat')
+		parse_logs('/Users/or/LAS/HoneyMapping/data/unicamp.txt', 'testing_logparser', '/usr/local/share/GeoIP/GeoIPCity.dat')
 		#delete the log files
 
 		return
@@ -51,15 +51,19 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		gir = gi.record_by_addr(ipAddress)
 		if gir:
 			if gir['city']:
-				city =  unicode(gir['city'], 'latin1') # Converts the string from Latin-1 according to GeoIP documentation
+				city =  str(gir['city']) # Converts the string from Latin-1 according to GeoIP documentation
 			else:
 				city = 'Unknonw'
-
+	
 			lat = gir['latitude']
 			lon = gir['longitude']
-			cc = unicode(gir['country_code'], 'latin1')
+			cc = str(gir['country_code'])
 		else:
-			print "Ip not found in ipDatabase"
+			print("Ip not found in ipDatabase")
+			city = 'Unknonw'
+			lat = '0'
+			lon = '0'
+			cc  = '??'
 
 		#Dictionary to translate the name to the month to expected number
 		monthNumber = {
@@ -86,7 +90,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 				countryCode = cc
 			)
 		l.save()
-		t , created = Target.objects.get_or_create(
+		s , created = Source.objects.get_or_create(
 				location  = l,
 				port	  = port,
 				collector = collectorName,
@@ -95,7 +99,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		a = Attack(
 				key		  = hashKey,
 				dateTime  = '2015-'+monthNumber[month]+'-'+day+' '+time,
-				target    = t,
+				source    = s,
 			)
 		a.save()
 
