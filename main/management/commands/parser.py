@@ -96,97 +96,11 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 				collector = collectorName,
 				protocol  = protc,
 			)
+		s.quantity = s.quantity + 1
+		s.save()
 		a = Attack(
 				key		  = hashKey,
 				dateTime  = '2015-'+monthNumber[month]+'-'+day+' '+time,
 				source    = s,
 			)
 		a.save()
-
-
-def old_main():
-	# Arrays data are passed to map.js
-	markers = []
-	count = []
-	regions = []
-
-	d = parse_logs('data/logs.txt', '/usr/local/share/GeoIP/GeoIPCity.dat')
-
-	i = 0
-	countSet = []
-	markersSet = []
-	regionsSet = dict()
-	for key in d.keys():
-		if i == 100:
-			i = 0;
-			markers.append(markersSet)
-			count.append(countSet)
-			regions.append(regionsSet)
-			countSet = []
-			markersSet = []
-			regionsSet = dict()
-
-		le = dict()
-		le['name'] = d[key].name
-		le['port'] = d[key].port
-		le['ip'] = d[key].ip
-		le['count'] = len(d[key].key)
-		le['latLng'] = d[key].latLng
-		le['city'] = d[key].city
-
-		cc = d[key].countryCode
-		le['countryCode'] = cc
-
-		if cc in regionsSet:
-			regionsSet[cc] += le['count']
-		else:
-			regionsSet[cc] = le['count']
-
-		markersSet.append(le)
-
-
-		for le in markersSet:
-			countSet.append(le['count'])
-
-		i += 1
-	markers.append(markersSet)
-	count.append(countSet)
-	regions.append(regionsSet)
-
-
-	pd = dict()
-	# Count by the attacks type
-	for markersSet in markers:
-		for le in markersSet:
-			key = le['name']+':'+le['port']
-			if key in pd:
-				pd[key] += le['count']
-			else:
-				pd[key] = le['count']
-
-	# Translate pd to the json format expected by d3.js
-	piedata = []
-	for key in pd:
-		d = dict()
-		d['label'] = key
-		d['value'] = pd[key]
-
-		piedata.append(d)
-
-	mapdata = dict()
-	mapdata['markers'] = markers
-	mapdata['count'] = count
-	mapdata['regions'] = regions
-
-
-	# Hardcoded path... need to change this later
-	f = open( os.getcwd()+'/main/static/json/mapdata.json','w')
-	f.write(json.dumps(mapdata))
-	f.close
-
-	# Hardcoded path... need to change this later
-	f = open( os.getcwd()+'/main/static/json/piedata.json','w')
-	f.write(json.dumps(piedata))
-	f.close
-
-	return 0

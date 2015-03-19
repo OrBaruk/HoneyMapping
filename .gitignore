@@ -7,3 +7,4 @@
 *.sublime*
 *.pyc
 db.sqlite3
+*.json

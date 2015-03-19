@@ -18,7 +18,8 @@
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
-		$.getJSON("{{ STATIC_URL }}json/mapdata.json", function(json) {
+		// $.getJSON("{{ STATIC_URL }}json/mapdata.json", function(json) {
+		$.getJSON("http://127.0.0.1:8000/report/2015/09/20", function(json) {
 			Map.init(json['markers'], json['count'], json['regions']);
 		});
 
