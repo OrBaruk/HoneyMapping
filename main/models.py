@@ -23,6 +23,7 @@ class Source(models.Model):
 	port = models.IntegerField()
 	collector = models.CharField(max_length=255)
 	protocol = models.CharField(max_length=255)
+	quantity = models.IntegerField(default=0)
 
 	class Meta:
 		db_table		= 'sources'

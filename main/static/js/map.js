@@ -60,7 +60,7 @@ var Map = {
 
 				backgroundColor: '#6699cc',
 
-				markers: markers[val],
+				markers: markers,
 
 				series: {
 					markers: [{
