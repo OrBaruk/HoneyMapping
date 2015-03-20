@@ -18,9 +18,18 @@
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script type="text/javascript">
-		// $.getJSON("{{ STATIC_URL }}json/mapdata.json", function(json) {
-		$.getJSON("http://127.0.0.1:8000/report/2015/09/20", function(json) {
-			Map.init(json['markers'], json['count'], json['regions']);
+		
+		$.when(
+			$.getJSON("http://127.0.0.1:8000/report/2015/09/20", function(data){
+				day1 = data;
+			}),
+			$.getJSON("http://127.0.0.1:8000/report/2015/09/21", function(data){
+				day2 = data;
+			})
+		).then(function() {
+			if (day1 && day2){
+				Map.init(day1['markers'], day1['count'], day1['regions']);
+			}
 		});
 
 	</script>
@@ -32,23 +41,23 @@
 	<script src="{{ STATIC_URL }}jslib/d3.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/nv.d3.js"></script>
 	<script type="text/javascript">
-		$.getJSON("{{ STATIC_URL }}json/piedata.json", function(piedata){
-			console.log(piedata);
+		// $.getJSON("{{ STATIC_URL }}json/piedata.json", function(piedata){
+		// 	console.log(piedata);
 
-			nv.addGraph(function() {
-				var chart = nv.models.pieChart()
-					.x(function(d) { return d.label })
-					.y(function(d) { return d.value })
-					.showLabels(false);
+		// 	nv.addGraph(function() {
+		// 		var chart = nv.models.pieChart()
+		// 			.x(function(d) { return d.label })
+		// 			.y(function(d) { return d.value })
+		// 			.showLabels(false);
 
-				d3.select("#chartsvg")
-					.datum(piedata)
-					.transition().duration(350)
-					.call(chart);
+		// 		d3.select("#chartsvg")
+		// 			.datum(piedata)
+		// 			.transition().duration(350)
+		// 			.call(chart);
 
-				return chart;
-			});
-		});
+		// 		return chart;
+		// 	});
+		// });
 	</script>
 </body>
 </html>
