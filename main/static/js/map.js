@@ -1,9 +1,12 @@
 var Map = {
+	//Variable to store the information related to mapobject
+	obj: [],
+	opacityData: [],
+	colorData: [],
 
 	init: function (markers, radiusData, regionsData){
+		
 		$(function(){
-			var val = 0;
-
 			console.log("markers");
 			console.log(markers);
 			console.log("radius");
@@ -11,44 +14,15 @@ var Map = {
 			console.log("regions");
 			console.log(regionsData);
 
-
-			jQuery(document).ready(function(){
-				jQuery('#button-9')
-				.button({
-					icons: { 
-						primary: 'ui-icon-play'
-					},
-					text: false
-				})
-				.click(function animation (){
-					val = val + 1;
-					
-					$( "#slider" ).slider( "value", val );
-					mapObject.removeAllMarkers();
-					mapObject.reset();
-					mapObject.addMarkers(markers[val]);
-					mapObject.series.markers[0].setValues(colorData[val]);
-					mapObject.series.markers[1].setValues(opacityData[val]);
-					//mapObject.series.markers[2].setValues(radiusData[val]);
-					//mapObject.series.regions[0].setValues(regionsData[val]);
-
-					if( val != markers.length - 1){										
-						setTimeout(animation, 500);
-					}
-				});
-			});
-
 			// Internal value used to set the same opacity for each marker
 			// This computation in the future should be done by the server and cached
-			var opacityData = [];
-			var colorData =[];
 			for (var i = 0; i < markers.length; i++) {
-				opacityData[i] = 0.7;
-				colorData[i] = markers[i].name;
+				Map.opacityData[i] = 0.7;
+				Map.colorData[i] = markers[i].name;
 			};
 			
 			// This section is where you can customize most of the looks of the map
-			var mapObject = $('#world-map').vectorMap({
+			$('#world-map').vectorMap({
 				map: 'world_mill_en',
 				// scaleColors: ['#C8EEFF', '#0071A4'],	
 				normalizeFunction: 'polynomial',
@@ -60,29 +34,31 @@ var Map = {
 				markers: markers,
 
 				series: {
-					markers: [{
+					markers: [
+					{
 						attribute: 'fill',
 
 						// Sets up the colors for each attack type, maybe a more elegant solution can be done in the future
 						scale: {
-							'smbd' : '#0000ff',
-							'httpd' : '#00ff00',
-							'mssqld' : '#ff8000',
-							'epmapper' : '#ff0080',
-							'ftpd' : '#66ffff',
-							'SipSession' : '#ff0000'
+							'smbd' 			: '#0000ff',
+							'httpd' 		: '#00ff00',
+							'mssqld' 		: '#ff8000',
+							'epmapper' 		: '#ff0080',
+							'ftpd' 			: '#66ffff',
+							'SipSession' 	: '#ff0000'
 						},
-						values: colorData
+						values: Map.colorData
 					},
 					{
 						attribute: 'fill-opacity',
-						values: opacityData
+						values: Map.opacityData
 					},
 					{
 						attribute: 'r',
 						scale: [5,15],
 						values: radiusData
-					}],
+					}
+					],
 
 					regions: [{
 						scale: ['#ffcccc','#996666'],
@@ -95,6 +71,7 @@ var Map = {
 						'<p>City: '+markers[index].city+'</p>'+
 						'<p>Type: '+markers[index].name+'</p>'+
 						'<p>Port: '+markers[index].port+'</p>'+
+						'<p>LatLng: '+markers[index].latLng+'</p>'+
 						'<p>Packets Sent: '+markers[index].count+'</p>'
 					);
 				},
@@ -114,28 +91,20 @@ var Map = {
 				;}
 			});
 
-			// Implements the slider functionality
-			var mapObject = $('#world-map').vectorMap('get', 'mapObject');
-			$("#slider").slider({
-				value: val,
-				min: 0,
-				max: markers.length - 1,
-				animate: true,
-				step: 1,
-				slide: function( event, ui ){
-					val = ui.value;
-					mapObject.removeAllMarkers();
-					mapObject.reset();
-					mapObject.addMarkers(markers[val]);
-					mapObject.series.markers[0].setValues(colorData[val]);
-					mapObject.series.markers[1].setValues(opacityData[val]);
-					//mapObject.series.markers[2].setValues(radiusData[val]);
-					//mapObject.series.regions[0].setValues(regionsData[val]);				
-				}
-			});
-
-
+			Map.obj = $('#world-map').vectorMap('get', 'mapObject');			
 		});
-	}
+	},
 
+	update: function (markers, radiusData, regionsData){
+		//TEM ALGUMA COISA MUITO ERRADA AQUI
+
+		//Map.obj.removeAllMarkers();
+		Map.obj.remove();
+		Map.init(markers, radiusData, regionsData)
+		//Map.obj.addMarkers(markers);
+		//Map.obj.series.markers[0].setValues(Map.colorData);
+		//Map.obj.series.markers[1].setValues(Map.opacityData);
+		//Map.obj.series.markers[2].setValues(radiusData);
+		//Map.obj.series.regions[0].setValues(regionsData);
+	}
 };
