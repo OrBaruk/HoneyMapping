@@ -50,10 +50,10 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		#Obtains geographic information from ip address
 		gir = gi.record_by_addr(ipAddress)
 		if gir:
-			if gir['city']:
-				city =  str(gir['city']) # Converts the string from Latin-1 according to GeoIP documentation
-			else:
-				city = 'Unknonw'
+			#if gir['city']:
+			city =  str(gir['city']) # Converts the string from Latin-1 according to GeoIP documentation
+			#else:
+			#	city = 'Unknonw'
 	
 			lat = gir['latitude']
 			lon = gir['longitude']
