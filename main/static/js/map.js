@@ -7,12 +7,12 @@ var Map = {
 	init: function (markers, radiusData, regionsData){
 		
 		$(function(){
-			console.log("markers");
-			console.log(markers);
-			console.log("radius");
-			console.log(radiusData);
-			console.log("regions");
-			console.log(regionsData);
+			// console.log("markers");
+			// console.log(markers);
+			// console.log("radius");
+			// console.log(radiusData);
+			// console.log("regions");
+			// console.log(regionsData);
 
 			// Internal value used to set the same opacity for each marker
 			// This computation in the future should be done by the server and cached
@@ -72,7 +72,8 @@ var Map = {
 						'<p>Type: '+markers[index].name+'</p>'+
 						'<p>Port: '+markers[index].port+'</p>'+
 						'<p>LatLng: '+markers[index].latLng+'</p>'+
-						'<p>Packets Sent: '+markers[index].count+'</p>'
+						'<p>Packets Sent: '+markers[index].count+'</p>'+
+						'<p>Collector: '+markers[index].collector+'</p>'
 					);
 				},
 
