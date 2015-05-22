@@ -13,14 +13,13 @@ def index(request):
 
 
 def report_month(request, year, month):
-	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month, attack__dateTime__day=day)
+	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month)
 	
-	count   = []
-	markers = []
+	count   = dict()
+	markers = dict()
 	regions = dict()
 
 	for s in sources:
-		attacks = Attack.objects.all().filter(source=s.pk)
 		l 		= s.location
 		cc		= l.countryCode
 		size 	= s.quantity	
@@ -33,19 +32,22 @@ def report_month(request, year, month):
 		m['latLng']	= [str(l.latitude), str(l.longitude)]
 		m['city']  	= l.cityName
 		m['countryCode'] = cc
-		markers.append(m)
+		m['collector'] = s.collector
+
+		if l.pk in markers:
+			count[l.pk] = count[l.pk] + size
+		else:
+			markers[l.pk] = m
+			count[l.pk] = size
 
 		if cc in regions:
 			regions[cc] += size
 		else:
 			regions[cc] = size
 
-		count.append(size)
-
-
 	mapdata = dict()
-	mapdata['markers'] = markers
-	mapdata['count'] = count
+	mapdata['markers'] = list(markers.values())
+	mapdata['count'] = list(count.values())
 	mapdata['regions'] = regions
 
 	return HttpResponse(json.dumps(mapdata))
@@ -53,12 +55,11 @@ def report_month(request, year, month):
 def report_day(request, year, month, day):
 	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month, attack__dateTime__day=day)
 	
-	count   = []
-	markers = []
+	count   = dict()
+	markers = dict()
 	regions = dict()
 
 	for s in sources:
-		attacks = Attack.objects.all().filter(source=s.pk)
 		l 		= s.location
 		cc		= l.countryCode
 		size 	= s.quantity	
@@ -71,19 +72,22 @@ def report_day(request, year, month, day):
 		m['latLng']	= [str(l.latitude), str(l.longitude)]
 		m['city']  	= l.cityName
 		m['countryCode'] = cc
-		markers.append(m)
+		m['collector'] = s.collector
+
+		if l.pk in markers:
+			count[l.pk] = count[l.pk] + size
+		else:
+			markers[l.pk] = m
+			count[l.pk] = size
 
 		if cc in regions:
 			regions[cc] += size
 		else:
 			regions[cc] = size
 
-		count.append(size)
-
-
 	mapdata = dict()
-	mapdata['markers'] = markers
-	mapdata['count'] = count
+	mapdata['markers'] = list(markers.values())
+	mapdata['count'] = list(count.values())
 	mapdata['regions'] = regions
 
 	return HttpResponse(json.dumps(mapdata))
