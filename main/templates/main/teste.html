@@ -34,39 +34,14 @@
 		var curDay = d.getDate() // console.log(d.getDate()); // dia do mes
 		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate() // console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate()); //dias no mes
 
-		$.getJSON("http://127.0.0.1:8000/report/2014/9", function(data){
-			initialMonth = data;
-			Map.init(data['markers'], data['count'], data['regions']);
-		});
+		// $.getJSON("http://127.0.0.1:8000/report/2014/9", function(data){
+		// 	initialMonth = data;
+		// 	Map.init(data['markers'], data['count'], data['regions']);
+		// });
 	</script>
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script src="{{ STATIC_URL }}js/slider.js"></script>
 	
-
-	<div id="piechart" align="center">
-		<svg id = "chartsvg" style="width: 1300px; height: 200px"></svg>
-	</div>
-	<script src="{{ STATIC_URL }}jslib/d3.min.js"></script>
-	<script src="{{ STATIC_URL }}jslib/nv.d3.js"></script>
-	<script type="text/javascript">
-		// $.getJSON("{{ STATIC_URL }}json/piedata.json", function(piedata){
-		// 	console.log(piedata);
-
-		// 	nv.addGraph(function() {
-		// 		var chart = nv.models.pieChart()
-		// 			.x(function(d) { return d.label })
-		// 			.y(function(d) { return d.value })
-		// 			.showLabels(false);
-
-		// 		d3.select("#chartsvg")
-		// 			.datum(piedata)
-		// 			.transition().duration(350)
-		// 			.call(chart);
-
-		// 		return chart;
-		// 	});
-		// });
-	</script>
 </body>
 </html>

@@ -62,7 +62,7 @@ def report_day(request, year, month, day):
 	markers = dict()
 	regions = dict()
 
-	for s in sources:
+	for s in sources.iterator():
 		l 		= s.location
 		cc		= l.countryCode
 		size 	= s.quantity	
@@ -94,3 +94,15 @@ def report_day(request, year, month, day):
 	mapdata['regions'] = regions
 
 	return HttpResponse(json.dumps(mapdata))
+
+def teste(request, year, month, day):
+	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month, attack__dateTime__day=day)
+	
+
+	i = 0
+	for s in Attack.objects.all():
+		i = i + 1
+
+	print(i)
+
+	return render(request, 'main/teste.html')
