@@ -19,7 +19,10 @@ def report_month(request, year, month):
 	markers = dict()
 	regions = dict()
 
+	i = 0
 	for s in sources:
+		print(i)
+		i = i + 1
 		l 		= s.location
 		cc		= l.countryCode
 		size 	= s.quantity	

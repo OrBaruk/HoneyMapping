@@ -9,6 +9,7 @@
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-1.2.2.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-world-mill-en.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-ui.min.js"></script>
+	<script src="{{ STATIC_URL }}jslib/bootstrap-datepicker.js"></script>
 
 </head>
 <body>
@@ -18,18 +19,30 @@
 		<div id="slider" style="width: 1200px; height: 10px; margin-top: 15px;"align="center"></div>
 	</div>
 
-	<script src="{{ STATIC_URL }}js/map.js"></script>
-	<script src="{{ STATIC_URL }}js/slider.js"></script>
+ 	<div class="well">
+		<input type="text" class="span2" value="02-16-2012" id="dp3" >
+	</div>
+
 	<script type="text/javascript">
-		var initialMonth
-		
-		$.getJSON("http://127.0.0.1:8000/report/2015/9", function(data){
+		var initialMonth;
+
+		$('#dp3').datepicker();
+			
+		var d = new Date();
+
+		var curMonth = d.getMonth()+1 // console.log(d.getMonth()+1); // numero do mes
+		var curDay = d.getDate() // console.log(d.getDate()); // dia do mes
+		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate() // console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate()); //dias no mes
+
+		$.getJSON("http://127.0.0.1:8000/report/2014/9/10", function(data){
 			initialMonth = data;
 			Map.init(data['markers'], data['count'], data['regions']);
 		});
-
 	</script>
 
+	<script src="{{ STATIC_URL }}js/map.js"></script>
+	<script src="{{ STATIC_URL }}js/slider.js"></script>
+	
 
 	<div id="piechart" align="center">
 		<svg id = "chartsvg" style="width: 1300px; height: 200px"></svg>

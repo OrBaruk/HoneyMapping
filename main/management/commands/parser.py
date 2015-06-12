@@ -11,10 +11,10 @@ class Command(BaseCommand):
 	help = 'Some usefull help message'
 
 	def handle(self, *args, **options):
-		self.stdout.write('Hello handle')
+		self.stdout.write(args[0])
 
 		#call function to parse the logs
-		parse_logs('/Users/or/LAS/HoneyMapping/data/unicamp.txt', 'testing_logparser', '/usr/local/share/GeoIP/GeoIPCity.dat')
+		parse_logs('/Users/or/LAS/HoneyMapping/data/'+args[0], args[0], '/usr/local/share/GeoIP/GeoIPCity.dat')
 		#delete the log files
 
 		return
@@ -28,15 +28,21 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	
 	for line in f.readlines():
 
-		print(line)
+		#print(line)
 
-		rows = line.split(' ')
+
+		rows = line.split()		
 		if len(rows) != 9:# Checks if the line has correct parameters
-		    continue
+			continue
+		#print(rows[8])
 
-		month	  = rows[5]
-		day  	  = rows[6]
-		time 	  = rows[7]
+		aux = rows[5].split('-')
+		year	  = aux[0]		
+		month	  = aux[1]
+		day  	  = aux[2]
+		print(rows[5]+' '+rows[6])
+
+		time 	  = rows[6]
 
 		aux	 = rows[8].split('-')
 		if len(aux) != 4: # Checks if the line has correct parameters
@@ -65,21 +71,6 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 			lon = '0'
 			cc  = '??'
 
-		#Dictionary to translate the name to the month to expected number
-		monthNumber = {
-			'Jan' : '01',
-			'Feb' : '02',
-			'Mar' : '03',
-			'Apr' : '04',
-			'May' : '05',
-			'Jun' : '06',
-			'Jul' : '07',
-			'Aug' : '08',
-			'Sep' : '09',
-			'Oct' : '10',
-			'Nov' : '11',
-			'Dec' : '12',
-		}
 
 		#Saves information into database
 		l = IpLocation(
@@ -100,7 +91,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		s.save()
 		a = Attack(
 				key		  = hashKey,
-				dateTime  = '2015-'+monthNumber[month]+'-'+day+' '+time,
+				dateTime  = rows[5]+' '+rows[6],
 				source    = s,
 			)
 		a.save()
