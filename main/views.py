@@ -52,7 +52,8 @@ def report_month(request, year, month):
 	mapdata['count'] = list(count.values())
 	mapdata['regions'] = regions
 
-	return HttpResponse(json.dumps(mapdata))
+	return render(request, 'main/teste.html')
+#	return HttpResponse(json.dumps(mapdata))
 
 def report_day(request, year, month, day):
 	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month, attack__dateTime__day=day)

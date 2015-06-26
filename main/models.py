@@ -36,7 +36,7 @@ class Attack(models.Model):
 	key = models.CharField(max_length=255, 
 	        			   unique=True,
 	        			   primary_key=True) # Chech the maxlength of hash
-	dateTime	= models.DateTimeField()
+	dateTime	= models.DateTimeField(db_index=True)
 	source  	= models.ForeignKey(Source)
 
 	def __str__(self): 
