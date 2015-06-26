@@ -1,0 +1,113 @@
+% Estilo para Teses do Instituto de Computacao da UNICAMP
+% Traduzido e Adaptado a partir de suthesis.sty
+% Welson R. Jacometti - 03.06.1992
+%
+% Modificacoes e correcoes introduzidas por:
+% Pedro J. de Rezende - 14.05.1993
+% Pedro J. de Rezende - 23.10.1996
+%
+% Adaptacao para capa com janela e inclusao de opcao para doutorado:
+% Pedro J. de Rezende - 19.11.1996
+%
+% Revisao de formato para conformidade com novas recomendacoes da DAC:
+% Pedro J. de Rezende - 25.04.1997
+%
+% Revisao de formato para conformidade com composicao de banca de doutorado:
+% Pedro J. de Rezende - 13.10.1997
+%
+% Revisao para constar co-orientador na pagina correta e nao na banca:
+% Pedro J. de Rezende - 3.11.1997
+%
+% Revisao na ordem das paginas e para deixar paginas em branco na contagem
+% para substituicao pela ficha catalografica e pela folha com a assinatura da banca:
+% Rodolfo Jardim de Azevedo - 18.06.2002
+%
+% Revisao para numerar *todas* as paginas como requer a Grafica da UNICAMP
+% Pedro J. de Rezende - 5.07.2002
+%
+% Revisao para oferecer a opcao de nao mostrar as paginas de ficha catalografica,
+% assinatura da banca e texto mencionando a versao final
+% Jeronimo Pellegrini - 24.05.2006
+%
+% Revisao de formato para conformidade com as novas normas da UNICAMP, conforme
+% Informacao CCPG/002/06
+% Jeronimo Pellegrini e Pedro J. de Rezende - 01.12.2006
+%
+% Revisao para compatibilizar com o pacote color (alteracao feita substituindo a definicao de \@xfloat).
+% Pedro J. de Rezende - 10.06.2010
+%
+% Revisao para adicionar nome do autor e cabecalho com nome do Instituto de Computacao na folha inicial 
+% Pedro J. de Rezende - 13.06.2012
+%
+% Branch para versões em Inglês
+% Matheus Mota 25.06.2012
+%
+% Revisao para adicionar traducao de todos os termos na capa
+% Rodrigo D. A. Senra - 04.11.2012
+%
+% Final hacking to produce a coherent set of front pages, starting
+% with the very bad template supplied by Unicamp's PRPG.
+% Hey! I've never hacked LaTeX before!
+% Paulo Licio de Geus - 20121105
+%
+% Revisao para unificar os modelos em ingles e em portugues da PRPG.
+% Caio Hoffman - 15.11.2012
+%
+% Revisao e correcao do modelo unificado em ingles/portugues/espanhol.
+% Caio Hoffman - 18.12.2012
+%
+% Revisao e correcao. Adicao da possibilidade de dedicatoria e epigrafe.
+% Caio Hoffman - 24.12.2012
+%
+% Modifcacao para alternar entre versao final e nao final.
+% Caio Hoffman - 12.02.2013
+%
+% Revisao e correcao.
+% Caio Hoffman - 05.03.2013
+%
+% Insercao da opcao de co-tutela.
+% Caio Hoffman - 14.05.2013
+%
+% Normalizacao do leiaute, segundo a PRPG:
+% todo texto das paginas em romano deve iniciar em pagina impar
+% mesmo quando a tese e doubled-sided. A excecao da ficha catalografica.
+% Caio Hoffman - 07.06.2013
+%
+% Small caps com italico folha de apresentacao.
+% Caio Hoffman - 15.06.2013
+%
+% Re-inclui condicionais para a adição das páginas de tabelas e figuras
+% Inclui função para definir ficha catalografica (\fichacatalografica)
+% Inclui função para definir a ata (\assinaturabanca)
+% André C. Silva - 03.07.2013
+%
+% Correcao de numeracao de paginas.
+% Caio Hoffman - 30.08.2013
+%
+% Inclusao do setimo membro da banca
+% Correcao de numeracao de paginas e bookmark para referencias
+% Heiko Hornung - 23.10.2013
+%
+% Funcao para incluir a folha de rosto assinada pelo orientador.
+% Correcoes no texto em espanhol.
+% Caio Hoffman - 27.11.2013
+%
+% Inclusao de possibilidade de listas no prefacio com as paginas
+% espacadas conforme norma da PRPG.
+% Caio Hoffman - 02.12.2013
+%
+% Comando para listas de siglas, etc.
+% Modificacao de pacote para classe.
+% Caio Hoffman - 11.02.2014
+%
+% Inclusao de comandos para abstract, resumen e resumo.
+% Hifenizacao para textos em idiomas estrangeiros.
+% Caio Hoffman - 23.06.2014 
+%
+% G.P. Telles e Karina Taguchi, 10/06/2015
+% Correção da numeração das páginas, remoção do copyright, remoção de Post.
+% Correção das definições de theabstract, elresumen e oresumo.
+%
+% G.P. Telles, 18/06/2015
+% A4.
+%
