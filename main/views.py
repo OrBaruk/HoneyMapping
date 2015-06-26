@@ -11,7 +11,6 @@ import json
 def index(request):
 	return render(request, 'main/index.html')
 
-
 def report_month(request, year, month):
 	sources = Source.objects.all().filter(attack__dateTime__year=year, attack__dateTime__month=month)
 	

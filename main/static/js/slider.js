@@ -1,6 +1,5 @@
 var day = 0;
 
-
 jQuery(document).ready(function(){	
 	jQuery('#button-9')
 	.button({

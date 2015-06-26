@@ -15,7 +15,6 @@ class Command(BaseCommand):
 
 		#call function to parse the logs
 		parse_logs('/Users/or/LAS/HoneyMapping/data/'+args[0], args[0], '/usr/local/share/GeoIP/GeoIPCity.dat')
-		#delete the log files
 
 		return
 
@@ -27,7 +26,6 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	f = open(filepath, 'r')
 	
 	for line in f.readlines():
-
 		#print(line)
 
 
@@ -92,6 +90,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		a = Attack(
 				key		  = hashKey,
 				dateTime  = rows[5]+' '+rows[6],
+
 				source    = s,
 			)
 		a.save()
