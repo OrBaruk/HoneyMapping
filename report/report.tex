@@ -2,7 +2,7 @@
 \documentclass[%
         % Use this line to thesis with more than 100 pages in ARABIC NUMERATION.
         % Or remove it to thesis with up to 100 pages in ARABIC NUMBERATION.
-        TwoSidePages,%
+        % TwoSidePages,%
         % Select one of the following idioms to be the main language of your thesis.
         % If you remove this line the main language will be English.
         Portuguese,% Spanish % English
@@ -10,9 +10,9 @@
         % Remove this line if you have not defended yet.
         % FinalVersion,%
         % Let this command to show the list of your tables. Or removed it.
-        TablesPage,%
+        %TablesPage,%
         % Let this command to show the list of your figures. Or removed it.
-        FiguresPage,%
+        %FiguresPage,%
         ]
 {ic-tese-v2}
 % \usepackage[utf8x]{inputenc}
@@ -30,6 +30,13 @@
 % \usepackage{enumitem}
 % \usepackage[section]{placeins}
 
+\usepackage
+%               [pdfauthor={nome do autor},
+%                pdftitle={titulo},
+%                pdfkeywords={palavras, chaves},
+%                pdfproducer={Latex with hyperref},
+%                pdfcreator={pdflatex}]
+{hyperref}
 
 %---------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------
@@ -37,61 +44,44 @@
 
 \title{ Visualização de dados de honeypots }
 
-
-
-
 \thisyear{2015}
 \author{Alexandre Or Cansian Baruque}
-% \degreesoughtpt{Doutorado} % Mestrado
-% \degreesought{DEGREE} % PhD/MSc/Doctorado/Mag\'ister
-
-% \titlesoughtpt{Doutor} % Mestre
-% \titlesought{TITLE} % Doutor/Doutora/Mestre/Maestro/Maestra/PhD/Doctor(somente para o espanhol)/Doctora
 
 \principaladvisor{Prof. Dr. Paulo Licio de Geus}
-\advisortitle{Supervisor/\textit{Orientador}} % Orientadora/Director/Directora
-% If you does have co-advisor comment the command.
-\coadvisor{Prof. Dr. André Abed Grégio} %Co-orientadora  , pode ser omitido
-
-\grants{{\rm Financial support: CNPq scholarship (process XYZ) 2010--2012}} % Pode ser omitido.
-
-% To include the PDF with the library register (ficha catalográfica),
-% use \fichacatalografia{arquivo}. The file extension can be omitted.
-%\fichacatalografica{doc.pdf}
-
-% To include the PDF with the advisor's signature (assinatura do orientador na folha de rosto),
-% use \folhaderosto{arquivo}. The file extension can be omitted.
-%\folhaderosto{}
+\coadvisor{Prof. Dr. André Abed Grégio}
 
 % This command have to be used right here.
 \beforepreface
 
-\begin{theabstract}
-	The abstract must contain at most 500 words...
-
-	\textbf{Observation:} the text in this page *has to* fit it in. The Unicamp's printing service would reject this work
-	if more than one page were used.
-\end{theabstract}
-
 \begin{oresumo}
-O presente projeto tem como objetivo a implantação de um sistema para o tratamento e visualização de dados coletados por meio de sensores participantes de uma infra-estrutura de coleta de programas maliciosos.
+O projeto tem como objetivo a implantação de um sistema para o tratamento e visualização de dados coletados por meio de sensores participantes de uma infra-estrutura de coleta de programas maliciosos.
 
-Esse sistema foi desenvolvido fazendo o uso de tecnologias Web para o desenvolvimento de um serviço de visualização dos dados que correlaciona a posição geográfica da origem do potencial ataque com os dados dos ataques e data e hora da coleta.
+Esse sistema foi desenvolvido fazendo o uso de tecnologias Web para o desenvolvimento de um serviço de visualização dos dados que correlaciona a posição geográ́fica da origem do potencial ataque com os dados dos ataques e data e hora da coleta.
 
-Isto torna possível que um analista que faz uso das funcionalidades integradas no sistema consiga identificar padrões e tendências das atividades maliciosas registradas, tirando assim conclusões acerca dos dados observados.
+Isto torna possível que um analista que faz uso das funcionalidades integradas no sistema consiga identificar padrões e tendências das atividades maliciosas registradas, tirando assim conclusões acerca dos dados observados.
 \end{oresumo}
 
-\afterpreface
+\afterpreface	
 
 \chapter{Introdução}
+Programas maliciosos (malware) representam uma das maiores ameaças aos usuários e sistemas conectados à Internet. A facilidade da geração de novos exemplares a partir de malware já existente, as chamadas variantes, faz com que a atuação dos mecanismos de defesa seja dificultada, seja na criação de vacinas, seja no processamento das centenas de milhares de variantes em operação. Por exemplo, no caso de antivírus com detecção baseada em assinaturas, é necessário em geral a atividade de um analista humano que descubra um modo de detecção para um dado malware e produza a assinatura em questão. Para tanto, o analista precisa ter em mãos a variante ainda não detectada.
+A fim de obter programas maliciosos e suas variantes, necessita-se de uma infraestrutura de coleta distribuída. A motivação principal para tal infraestrutura é a de obter e armazenar exemplares de malware em circulação no Brasil para aná́lise posterior. Com isso, pretende-se obter informações acerca dos tipos de malware que
+atacam as redes que possuem um sensor de coleta (honeypot) a fim de agregar dados que permitam mostrar as tendências de ataques de uma maneira local (em cada rede) e global (conjunto das redes com sensores instalados).
+As informações obtidas desses honeypots de coleta incluem tráfego de rede, registros de auditoria (logs) das vulnerabilidades exploradas e tipos de ataques utilizados no comprometimento dos serviços/sistemas, e do biná́rio que representa o programa malicioso. De posse de tais informações, é possí́vel representá-las por meio de técnicas de visualização e disponibilizá-las por meio de uma arquitetura Web, permitindo a observação de tendências e geração de estatísticas.
 
-\chapter{Related work}
+
+\chapter{Trabalhos relacionados}
+
+ipviking
+honeynet
 
 \chapter{Atividades desenvolvidas}
 Para alcançar os objetivos propostos no projeto, as seguintes atividades foram desenvolvidas:
-- Estudo de conceitos sobre visualização de dados através do uso de plataformas de desenvolvimento Web, como Django e Javascript. Em específico, foi estudado extensivamente o uso de bibliotecas para D3 (data driven documents) e Jvectormap.
-- Definição da arquitetura utilizada para a implantação da infra-estrutura básica utilizada pelo servidor Web utilizado para a visualização dos dados e em outros sistemas necessários para a administração dos serviços.
-- Instalação das ferramentas e outros programas (e suas dependências) necessários para a implementação de um protótipo em uma máquina desktop provida pelo orientador.
+\begin{enumerate}
+\item Estudo de conceitos sobre visualização de dados através do uso de plataformas de desenvolvimento Web, como Django e Javascript. Em específico, foi estudado extensivamente o uso de bibliotecas para D3 (data driven documents) e Jvectormap.\\
+\item Definição da arquitetura utilizada para a implantação da infra-estrutura básica utilizada pelo servidor Web utilizado para a visualização dos dados e em outros sistemas necessários para a administração dos serviços.\\
+\item Instalação das ferramentas e outros programas (e suas dependências) necessários para a implementação de um protótipo em uma máquina desktop provida pelo orientador.\\
+\end{enumerate}
 Ao longo de todas as atividades desenvolvidas foi também feita a documentação do projeto, assim como outros relatórios e atividades requeridas (demonstração, levantamento de dados, etc).
 
 \chapter{Metodologia}
@@ -110,7 +100,7 @@ O resultado final foi um protótipo de uma sistema cuja ferramenta principal pe
 O mapa permite observar os dados sobre os ataques em uma dimensão temporal, atualizando as informações de acordo com o horário no qual tais dados foram coletados pelos sensores. Dessa forma, pode-se observar as tendências dos tipos de ataques no decorrer do dia, analisando-se os protocolos, serviços e locais de origem.
 Desenvolveu-se uma imagem em máquina virtual para VirtualBox. A configuração desta máquina virtual já está corretamente aplicada com todos os requisitos para o funcionamento adequado do servidor Web utilizado no provimento da visualização de dados formatados de acordo com os requisitos do projeto. O desenvolvimento da máquina virtual citada tem como objetivo armazenar a ferramenta de uma forma portátil para ser utilizada em demonstrações. A Figura abaixo representa um mapa em um dado instante de tempo com dados de potenciais ataques apresentados de acordo com a localização geográfica do endereço IP obtido, bem como outras informações (vide quadro escuro na América do Norte), tais como, a cidade estimada por meio das coordenadas obtidas do IP, o tipo do ataque (serviço alvo) e a porta de rede vulnerável que recebeu o ataque. Logo abaixo do mapa, pode-se notar uma barra de rolagem, a qual movimenta-se de forma automática para mostrar as tendências de ataque ao longo do dia e, mais abaixo, um gráfico que representa os protocolos monitorados e a frequência das conexões recebidas por estes protocolos no instante de tempo em questão.
 
-\chapter{Discussão / Considerações finais}
+\chapter{Considerações finais}
 Conforme apresentado na seção anterior, foram obtidos resultados concretos no projeto durante o período da bolsa. Entretanto, existem atividades importantes a serem feitas para os futuros trimestres, como previsto no plano de trabalho, as quais irão permitir a obtenção de informações de mais qualidade do ponto de vista de segurança. As principais propostas dessas atividades consistem do desenvolvimento de procedimentos para o tratamento dos dados obtidos, agregação de outros tipos de dados (provenientes de outros sensores) e a correlação de dados de diferentes endereços de origem e fontes visando a descoberta de ataques em associação.
 Além disso, há espaço para melhorias no que se refere a usabilidade da ferramenta, entre as quais incluem- se: uma melhor escolha de cores para a representação dos dados no mapa, melhor disposição do gráfico de protocolos, apresentação de mais informações sobre os potenciais ataques e uma interface mais avançada para a manipulação da dimensão temporal dos dados, permitindo ao analista definir intervalos de tempo para apresentar os dados com o objetivo de identificar padrões com maior facilidade.
 Por último, pretende-se buscar uma melhoria na performance do sistema em relação ao tempo de resposta entre a busca dos dados no banco de dados e a renderização dos pontos no mapa. Isto é possível por meio do uso de cache e outras técnicas de otimização disponíveis na plataforma Django, mas tais funcionalidades estavam alem do escopo do protótipo desenvolvido até o momento.
@@ -127,9 +117,6 @@ Adquiri conhecimento para sobre o processo de geração de imagens em Virtualb
 \section{Contribuição da participação no projeto para sua formação}
 Participar no projeto contribuiu para o meu conhecimento de ferramentas para rápida prototipagem de aplicações e implantação de serviços Web. Tais conhecimentos não são restritos a área de pesquisa, mas sim também para o mercado de trabalho, onde no modelo atual de startups, o tempo para a execução de um projeto é capaz de determinar o futuro da empresa. Aprendi também a estruturar relatórios técnicos de maneira adequada de forma a expor ideias e mostrar resultados.
 
-\chapter{Outros resultados}
-Exemplo: Relatórios técnicos, apostila/descrições de métodos, normas, produto tecnológico, serviço tecnológico, processos, técnicas, sistemas, modelos, métodos, desenho técnico e diagrama, documento de software e sistema da qualidade, especificação de macroprocesso, especificação de produto e de software, estudo prospectivo, instrução para execução de procedimento, manual de instruções - técnico e usuário, folha de dados de produto, pareceres sobre artigo científico (revisor de periódico), parecer técnico e laudo, relatório de aferição, relatório de atividades de participação em eventos técnicos científicos, textos didáticos.
-- Tutorial para instalação e configuração do sistema de visualização usando mapas. - Relatório técnico das atividades desenvolvidas durante o projeto.
 
 % \bibliographystyle{plain}
 % \bibliography{mybib}
