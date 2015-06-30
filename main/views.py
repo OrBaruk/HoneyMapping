@@ -20,25 +20,25 @@ def report_month(request, year, month):
 
 	i = 0
 	for s in sources:
-		print(i)
-		i = i + 1
 		l 		= s.location
 		cc		= l.countryCode
-		size 	= s.quantity	
-
-		m = dict()
-		m['name']  	= s.protocol
-		m['port']  	= s.port
-		m['ip']    	= l.pk
-		m['count'] 	= size
-		m['latLng']	= [str(l.latitude), str(l.longitude)]
-		m['city']  	= l.cityName
-		m['countryCode'] = cc
-		m['collector'] = s.collector
+		size 	= 1 # s.quantity	
 
 		if l.pk in markers:
 			count[l.pk] = count[l.pk] + size
 		else:
+			print(i)
+			i = i + 1
+		
+			m = dict()
+			m['name']  	= s.protocol
+			m['port']  	= s.port
+			m['ip']    	= l.pk
+			m['count'] 	= size
+			m['latLng']	= [str(l.latitude), str(l.longitude)]
+			m['city']  	= l.cityName
+			m['countryCode'] = cc
+			m['collector'] = s.collector
 			markers[l.pk] = m
 			count[l.pk] = size
 
@@ -67,19 +67,18 @@ def report_day(request, year, month, day):
 		cc		= l.countryCode
 		size 	= s.quantity	
 
-		m = dict()
-		m['name']  	= s.protocol
-		m['port']  	= s.port
-		m['ip']    	= l.pk
-		m['count'] 	= size
-		m['latLng']	= [str(l.latitude), str(l.longitude)]
-		m['city']  	= l.cityName
-		m['countryCode'] = cc
-		m['collector'] = s.collector
-
 		if l.pk in markers:
 			count[l.pk] = count[l.pk] + size
 		else:
+			m = dict()
+			m['name']  	= s.protocol
+			m['port']  	= s.port
+			m['ip']    	= l.pk
+			m['count'] 	= size
+			m['latLng']	= [str(l.latitude), str(l.longitude)]
+			m['city']  	= l.cityName
+			m['countryCode'] = cc
+			m['collector'] = s.collector
 			markers[l.pk] = m
 			count[l.pk] = size
 
