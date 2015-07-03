@@ -2,47 +2,55 @@ This is BibTeX, Version 0.99d (TeX Live 2012)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: report.aux
 The style file: plain.bst
-I found no \citation commands---while reading file report.aux
 Database file #1: mybib.bib
-You've used 0 entries,
+Warning--to sort, need author or key in geoip
+Warning--to sort, need author or key in d3js
+Warning--to sort, need author or key in django
+Warning--to sort, need author or key in honeynet
+Warning--to sort, need author or key in ipviking
+Warning--to sort, need author or key in dioneaefr
+Warning--to sort, need author or key in jquery
+Warning--to sort, need author or key in jvectormap
+Warning--to sort, need author or key in vitualbox
+You've used 9 entries,
             2118 wiz_defined-function locations,
-            497 strings with 3990 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            525 strings with 4452 characters,
+and the built_in function-call counts, 1532 in all, are:
+= -- 153
+> -- 9
 < -- 0
-+ -- 0
++ -- 9
 - -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+* -- 47
+:= -- 180
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
+cite$ -- 18
+duplicate$ -- 63
+empty$ -- 208
 format.name$ -- 0
-if$ -- 1
+if$ -- 379
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 9
 missing$ -- 0
-newline$ -- 3
+newline$ -- 48
 num.names$ -- 0
-pop$ -- 0
+pop$ -- 90
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 18
 quote$ -- 0
-skip$ -- 1
+skip$ -- 45
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 45
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
+type$ -- 36
+warning$ -- 9
 while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+width$ -- 10
+write$ -- 83
+(There were 9 warnings)

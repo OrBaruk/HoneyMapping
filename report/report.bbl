@@ -1,3 +1,48 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{d3js}
+{D3js}.
+\newblock \url{http://d3js.org/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{dioneaefr}
+{DionaeaFR}.
+\newblock \url{https://rubenespadas.github.io/DionaeaFR/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{django}
+{Django}.
+\newblock \url{https://www.djangoproject.com/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{geoip}
+{GeoIP} maxmind.
+\newblock \url{https://dev.maxmind.com/geoip/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{honeynet}
+{Honeynet}.
+\newblock \url{http://map.honeynet.org/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{jquery}
+{jQuery}.
+\newblock \url{https://jquery.com/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{jvectormap}
+{jVectorMap}.
+\newblock \url{http://jvectormap.com/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{ipviking}
+{Norse}.
+\newblock \url{http://map.norsecorp.com/}.
+\newblock Acessado: 2015-07-29.
+
+\bibitem{vitualbox}
+{VirtualBox}.
+\newblock \url{https://www.virtualbox.org/}.
+\newblock Acessado: 2015-07-29.
 
 \end{thebibliography}

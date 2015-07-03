@@ -329,81 +329,6 @@ the ic-tese documentation.}}{}
 %  \space de \number\the\year}
 \def\@copyrightyear{\number\the\year}
 
-\def\titlep{%
-%        \thispagestyle{empty}%
-        \begin{center}
-                \hrule\vspace{1pt}\hrule\vspace{1ex}
-                \ifx\@dept\relax\else\@dept\ \\\fi
-%                \@faculty \\
-%                \@facultypt \\
-% Conditionality for Languague
-                                \ifcase\@thesislanguage\relax%
-                                        %English
-                                        \or
-                                        {
-                                                \faculty/\textit{\@facultypt} \\
-                                        \university/\textit{\@universitypt}\\[1ex]
-                                        }
-                                        %Espanol
-                                        \or
-                                        {
-                                                \faculty/\textit{\@facultypt} \\
-                                        \university/\textit{\@universitypt}\\[1ex]
-                                        }
-                                        %Portugues
-                                        \else
-                                        {
-                                                \@facultypt\\
-                                        \@universitypt\\[1ex]
-                                        }
-                                \fi
-% End Conditionality
-                \hrule\vspace{1pt}\hrule
-        \end{center}
-        \vfill
-        \begin{center}
-                \Large\bf\expandafter{\@title}
-        \end{center}
-        \vspace{.5cm}
-        \begin{center}
-        {\large\bf\@author\ifx\@grants\relax\else\footnote{\@grants}\fi}\\[2ex]
-            {\small\@defencedate}
-        \end{center}
-        \vfill
-% Conditionality for Language
-                \ifcase\@thesislanguage\relax%
-                        %English
-                        \or
-                        {
-                {\bf Examiner Board/\textit{Banca Examinadora}:}
-                        }
-                        %Espanol
-                        \or
-                        {
-                {\bf Jurado Examinador/\textit{Banca Examinadora}:}
-                        }
-                        %Portugues
-                        \else
-                        {
-                {\bf Banca Examinadora:}
-
-                        }
-                \fi
-% End Conditionality
-        \begin{itemize}
-        \item \@principaladvisor\ (\@advisor)
-%       \ifx\@coadvisor\relax\else\item \@coadvisor\ (\@coadvisor\ ) \fi
-        \ifcotutela\item \@coadvisor\ \@coadvisortitle\else\relax\fi
-        \item \@firstreader
-        \item \@secondreader
-        \item \@thirdreader
-        \ifx\@fourthreader\relax\else\item \@fourthreader\fi
-        \ifx\@fifthreader\relax\else\item \@fifthreader\fi
-        \ifx\@sixthreader\relax\else\item \@sixthreader\fi
-        \ifx\@seventhreader\relax\else\item \@seventhreader\fi
-        \end{itemize}
-        \vfill
-        \null\cleardoublepage}
 
 \def\copyrightpage{%
 %        \null\vfill
@@ -682,7 +607,7 @@ the ic-tese documentation.}}{}
                         }
                 \else
                         \def\textaboutversion{
-                                {\small \textsc{Este exemplar corresponde \`{a} vers{\~a}o da \@tesept\ apresentada \`{a} banca examinadora por \@author, sob orienta\c{c}{\~a}o de ~\@principaladvisor.}}
+                                {\small \textsc{HUEHUEHUEHUEste exemplar corresponde \`{a} vers{\~a}o da \@tesept\ apresentada \`{a} banca examinadora por \@author, sob orienta\c{c}{\~a}o de ~\@principaladvisor.}}
                         }
                 \fi
                         \begin{tabular}{@{}p{.9\textwidth}}
