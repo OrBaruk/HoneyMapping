@@ -98,29 +98,49 @@ def report_day(request, year, month, day):
 	return HttpResponse(json.dumps(mapdata))
 
 def teste(request, year, month, day):
-	#REQUIRES CHARACTER ESCAPING 
+	start = time.time()	
+	startDate = '2014-08-14'
+	endDate   = '2014-09-14 23:59:59'
+
 	cursor = connection.cursor()
-	cursor.execute("select distinct ip_locations.ip, sources.port, sources.protocol, ip_locations.cityName, ip_locations.countryCode, ip_locations.latitude, ip_locations.longitude, sources.collector from attacks inner join sources on attacks.source_id == sources.id inner join ip_locations on ip_locations.ip == sources.location_id  where dateTime between '2014-08-14' and '2014-09-14 23:59:59'")
+	queryString = ( "SELECT DISTINCT "
+						"ip_locations.ip, "
+						"sources.port, "
+						"sources.protocol, "
+						"ip_locations.cityName, "
+						"ip_locations.countryCode, "
+						"ip_locations.latitude, "
+						"ip_locations.longitude, "
+						"sources.collector "
+					"FROM attacks "
+					"INNER JOIN sources on attacks.source_id == sources.id "
+					"INNER JOIN ip_locations on ip_locations.ip == sources.location_id "
+					"WHERE dateTime BETWEEN ? AND ?")
+	cursor.execute(queryString, (startDate, endDate)) #sql wrapers escapes characters if needed
 
 	count   = dict()
 	markers = dict()
 	regions = dict()
 
-	start = time.time()	
 	row = cursor.fetchone()
 	while row:
-		ip = row[0]
-		port = row[1]
-		protocol = row[2]
-		city = row[3]
+		ip 			= row[0]
+		port 		= row[1]
+		protocol 	= row[2]
+		city 		= row[3]
 		countryCode = row[4]
-		latitude = row[5]
-		longitude = row[6]
-		collector = row[7]
+		latitude 	= row[5]
+		longitude 	= row[6]
+		collector 	= row[7]
 
 		cursor2 = connection.cursor()
-		cursor2.execute("select count(ip_locations.ip)from attacks inner join sources on attacks.source_id == sources.id inner join ip_locations on ip_locations.ip == sources.location_id  where  ip='"+ip+"' and port='"+str(port)+"' and dateTime between '2014-08-14' and '2014-09-14 23:59:59'")
-		quantity = cursor2.fetchone()[0] #querydecount
+		queryString = ( "SELECT COUNT(ip_locations.ip) "
+						"FROM attacks "
+						"INNER JOIN sources on attacks.source_id == sources.id "
+						"INNER JOIN ip_locations on ip_locations.ip == sources.location_id  "
+						"WHERE ip=? AND port=? AND dateTime BETWEEN ? AND ?")
+		cursor2.execute(queryString, (ip, port, startDate, endDate))
+		quantity = cursor2.fetchone()[0]
 
 		m = dict()
 		m['name']  	= protocol
@@ -141,13 +161,14 @@ def teste(request, year, month, day):
 
 		row = cursor.fetchone()
 
-	end = time.time()
-	print(end - start)
 
 	mapdata = dict()
 	mapdata['markers'] = list(markers.values())
 	mapdata['count'] = list(count.values())
 	mapdata['regions'] = regions
 
-	# return render(request, 'main/teste.html')
+	#return render(request, 'main/teste.html')
+	end = time.time()
+	print(end - start)
+
 	return HttpResponse(json.dumps(mapdata))
