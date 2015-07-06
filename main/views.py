@@ -99,8 +99,8 @@ def report_day(request, year, month, day):
 
 def teste(request, year, month, day):
 	start = time.time()	
-	startDate = '2014-08-14'
-	endDate   = '2014-09-14 23:59:59'
+	startDate = year+'-'+month+'-'+day
+	endDate   = year+'-'+month+'-'+day+" 23:59:59"
 
 	cursor = connection.cursor()
 	queryString = ( "SELECT DISTINCT "
