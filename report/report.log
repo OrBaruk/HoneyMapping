@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  2 JUL 2015 14:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 JUL 2015 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -16,7 +16,25 @@ kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
  polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
 lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
 welsh, loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 �
+     �\documentclass[Portuguese,]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no � in font nullfont!
+Missing character: There is no � in font nullfont!
 (./ic-tese-v2.cls
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--6
+[] 
+ []
+
 Document Class: ic-tese-v2 2014/02/11 Institute of Computing Latex class
 Style: TESE IC - UNICAMP <11 de Fevereiro de 2014>.
 Information: Now english is the main language of this document.
@@ -38,7 +56,7 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
+ [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 (/usr/local/texlive/2012/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen103
 )
@@ -666,21 +684,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 9.
  (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -734,7 +752,7 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 9.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -743,9 +761,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count136
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
@@ -760,7 +778,7 @@ nverted-to.pdf>
 (epstopdf)                    size: 20567 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-unicamp-name-line-blk
 -red-0480-eps-converted-to.pdf logo-unicamp-name-line-blk-red-0480.eps>
-(epstopdf)             \includegraphics on input line 49.
+(epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
 
 <logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf, id=56, 481.8pt x 481
@@ -769,7 +787,7 @@ File: logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-unicamp-name-line-blk-red-0480-eps-converted-to.p
-df used on input line 49.
+df used on input line 18.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
 Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 0.eps>
@@ -782,7 +800,7 @@ Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 (epstopdf)             Command: <repstopdf --outfile=logo-ic-unicamp-slant-line
 -wht-sky-ora-0480-eps-converted-to.pdf logo-ic-unicamp-slant-line-wht-sky-ora-0
 480.eps>
-(epstopdf)             \includegraphics on input line 49.
+(epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
 
 <logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf, id=57, 481.8
@@ -792,13 +810,12 @@ file (type pdf)
 
 <use logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-conver
-ted-to.pdf used on input line 49.
+ted-to.pdf used on input line 18.
 (pdftex.def)             Requested size: 73.97733pt x 63.49303pt.
  [1
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo-
-unicamp-name-line-blk-red-0480-eps-converted-to.pdf> <./logo-ic-unicamp-slant-l
-ine-wht-sky-ora-0480-eps-converted-to.pdf>]
+ <./logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf> <./logo-ic-unicam
+p-slant-line-wht-sky-ora-0480-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <logo-unicamp-name-line-blk-red-0480.eps>
 (epstopdf)                    date: 2015-06-26 12:28:21
 (epstopdf)                    size: 124700 bytes
@@ -808,14 +825,14 @@ nverted-to.pdf>
 (epstopdf)                    size: 20567 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-unicamp-name-line-blk
 -red-0480-eps-converted-to.pdf logo-unicamp-name-line-blk-red-0480.eps>
-(epstopdf)             \includegraphics on input line 49.
+(epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
 File: logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf Graphic file (ty
 pe pdf)
 
 <use logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-unicamp-name-line-blk-red-0480-eps-converted-to.p
-df used on input line 49.
+df used on input line 18.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
 Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 0.eps>
@@ -828,43 +845,43 @@ Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 (epstopdf)             Command: <repstopdf --outfile=logo-ic-unicamp-slant-line
 -wht-sky-ora-0480-eps-converted-to.pdf logo-ic-unicamp-slant-line-wht-sky-ora-0
 480.eps>
-(epstopdf)             \includegraphics on input line 49.
+(epstopdf)             \includegraphics on input line 18.
 Package epstopdf Info: Output file is already uptodate.
 File: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf Graphic 
 file (type pdf)
 
 <use logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-conver
-ted-to.pdf used on input line 49.
+ted-to.pdf used on input line 18.
 (pdftex.def)             Requested size: 73.97733pt x 63.49303pt.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 49.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 18.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 18.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 49.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 18.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 49.
+(Font)              <12> on input line 18.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 49.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 49.
+(Font)              <6> on input line 18.
 
 ! Undefined control sequence.
-\finalversiontitle ...\i }tulo de \@titlesoughtpt 
-                                                  \ em Ci{\^e}ncia da Comput...
-l.49 \beforepreface
+\finalversiontitle ...} \begin {flushleft} {Rel{\�
+                                                  �{a}}torio para disciplina...
+l.18 \beforepreface
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -872,20 +889,206 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+! Undefined control sequence.
+\finalversiontitle ...ra disciplina MC040 - Est{\�
+                                                  �{a}}gio de Inicia\c {c}{\...
+l.18 \beforepreface
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
-[]\OT1/lmr/m/sc/10.95 HUEHUEHUEHUEste exem-
- []
+! Undefined control sequence.
+\finalversiontitle ...´{a}}gio de Inicia\c {c}{\�
+                                                  �a}o Cient{\´{i}}fica I\t...
+l.18 \beforepreface
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\finalversiontitle ...Inicia\c {c}{\˜a}o Cient{\�
+                                                  �{i}}fica I\tabularnewline...
+l.18 \beforepreface
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 \beforepreface
+                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten \endgroup.
+<recently read> \egroup 
+                        
+l.18 \beforepreface
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 3769) in paragraph at lines 49--49
-\OT1/lmr/m/sc/10.95 plar cor-res-ponde []a vers[]ao da
- []
+! LaTeX Error: \begin{tabular} on input line 18 ended by \end{flushleft}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \beforepreface
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Misplaced \crcr.
+\endarray ->\crcr 
+                  \egroup \egroup \@arrayright \gdef \@preamble {}
+l.18 \beforepreface
+                   
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Too many }'s.
+\endarray ->\crcr \egroup \egroup 
+                                  \@arrayright \gdef \@preamble {}
+l.18 \beforepreface
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.18 \beforepreface
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 49--49
-\OT1/lmr/m/sc/10.95 exa-mi-na-dora por Ale-xan-dre Or
- []
+! LaTeX Error: \begin{document} ended by \end{tabular}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \beforepreface
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 \beforepreface
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.18 \beforepreface
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+! Undefined control sequence.
+\finalversiontitle ...xtwidth } \textaboutversion 
+                                                  \end {minipage} } \fi \vsk...
+l.18 \beforepreface
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Too many }'s.
+\finalversiontitle ...outversion \end {minipage} }
+                                                   \fi \vskip 1cm \par \ifco...
+l.18 \beforepreface
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
 
 [2
 
@@ -893,7 +1096,7 @@ Underfull \hbox (badness 2189) in paragraph at lines 49--49
 ! Undefined control sequence.
 \beforepreface ... \documentsetup {1} \fi \titlep 
                                                   \ifcopyright \clearemptydo...
-l.49 \beforepreface
+l.18 \beforepreface
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -908,7 +1111,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.53 ...dos que correlaciona a posição geográ́
+l.22 ...dos que correlaciona a posição geográ́
                                                   fica da origem do potencia...
 
 Your command was ignored.
@@ -934,7 +1137,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 ... em circulação no Brasil para uma aná́
+l.32 ... em circulação no Brasil para uma aná́
                                                   lise posterior.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -947,7 +1150,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68 ...imento dos serviços/sistemas e do biná́
+l.37 ...imento dos serviços/sistemas e do biná́
                                                   rio que representa o progr...
 
 Your command was ignored.
@@ -961,7 +1164,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.68 ...e posse de tais informações, é possí́
+l.37 ...e posse de tais informações, é possí́
                                                   vel representá-las por me...
 
 Your command was ignored.
@@ -974,22 +1177,18 @@ or  <return>  to continue without it.
 
 ]
 Cap\'{\i }tulo 2.
-[2
 
-]
-Cap\'{\i }tulo 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
@@ -1000,17 +1199,17 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.86 ...s as atividades desenvolvidas foi també́
+l.49 ...s as atividades desenvolvidas foi també́
                                                   m feita a documentação d...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[3
+[2
 
 ]
-Cap\'{\i }tulo 4.
+Cap\'{\i }tulo 3.
 
 ! Package inputenc Error: Unicode char \u8:́ not set up for use with LaTeX.
 
@@ -1018,7 +1217,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 ...ntrole de versão dos componentes de có́
+l.57 ...ntrole de versão dos componentes de có́
                                                   digo produzidos ao longo d...
 
 Your command was ignored.
@@ -1032,7 +1231,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 ...utilizado o sistema \emph{git}. Tais có́
+l.57 ...utilizado o sistema \emph{git}. Tais có́
                                                   digos são armazenados em ...
 
 Your command was ignored.
@@ -1046,7 +1245,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 ...́digos são armazenados em um repositó́
+l.57 ...́digos são armazenados em um repositó́
                                                   rio privado criado no GitH...
 
 Your command was ignored.
@@ -1060,7 +1259,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 ...te habilitada pelo bolsista. O repositó́
+l.57 ...te habilitada pelo bolsista. O repositó́
                                                   rio consiste de dois ramos...
 
 Your command was ignored.
@@ -1074,7 +1273,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.96 ...ão no back-end, assim como servir o có́
+l.59 ...ão no back-end, assim como servir o có́
                                                   digo em JavaScript a ser e...
 
 Your command was ignored.
@@ -1088,14 +1287,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98 ...m encaminhados ao cliente executando có́
+l.61 ...m encaminhados ao cliente executando có́
                                                   digo JavaScript no formato...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[4
+[3
 
 ]
 
@@ -1105,7 +1304,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 ...oi feita pelo uso de bibliotecas de có́
+l.65 ...foi feita pelo uso de bibliotecas de có́
                                                   digo aberto baseados em Ja...
 
 Your command was ignored.
@@ -1119,15 +1318,15 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104 ...tualiza sua informações de forma autô
+l.67 ...atualiza sua informações de forma autô
                                                   noma, provendo a visualiza...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[5]
-Cap\'{\i }tulo 5.
+[4]
+Cap\'{\i }tulo 4.
 
 ! Package inputenc Error: Unicode char \u8:́ not set up for use with LaTeX.
 
@@ -1135,29 +1334,29 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.107 ...ometidos realizando o provimento de có́
+l.70 ...rometidos realizando o provimento de có́
                                                   digos maliciosos para sens...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<figs/mapa.png, id=125, 1333.98375pt x 839.135pt>
+<figs/mapa.png, id=135, 1333.98375pt x 839.135pt>
 File: figs/mapa.png Graphic file (type png)
  <use figs/mapa.png>
-Package pdftex.def Info: figs/mapa.png used on input line 114.
+Package pdftex.def Info: figs/mapa.png used on input line 77.
 (pdftex.def)             Requested size: 435.32718pt x 273.8424pt.
- [6
+ [5
 
 ]
-[7 <./figs/mapa.png (PNG copy)>]
+[6 <./figs/mapa.png (PNG copy)>]
+Cap\'{\i }tulo 5.
+[7
+
+]
 Cap\'{\i }tulo 6.
-[8
 
-]
-Cap\'{\i }tulo 7.
-
-Overfull \hbox (10.97765pt too wide) in paragraph at lines 133--134
+Overfull \hbox (10.97765pt too wide) in paragraph at lines 96--97
 \OT1/lmr/m/n/12 Os co-nhe-ci-men-tos ad-qui-ri-dos du-rante esse pro-jeto pos-s
 uem uma am-pla ^^Sarea de aplica^^Xc~ao,
  []
@@ -1169,56 +1368,55 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.139 ...ua posição geográfica possui importâ
+l.102 ...ua posição geográfica possui importâ
                                                   ncia.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[9
+[8
 
-] (./report.bbl [10]
+] (./report.bbl [9]
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 5.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
- [11
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+ [10
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: A88FE92A5E3225053BD451B640EFB940;841.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
+(rerunfilecheck)             Checksum: B986086E6EF91793A212D2FB2CBB1590;783.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 8335 strings out of 493488
- 125481 string characters out of 3141326
- 254075 words of memory out of 3000000
- 11408 multiletter control sequences out of 15000+200000
- 48821 words of font info for 37 fonts, out of 3000000 for 9000
+ 8324 strings out of 493488
+ 125347 string characters out of 3141326
+ 253666 words of memory out of 3000000
+ 11401 multiletter control sequences out of 15000+200000
+ 46073 words of font info for 36 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,9n,41p,1016b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,9n,41p,1016b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
-l/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2012
-/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/local/texlive/2012/texmf-dist/
-fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
-1/public/lm/lmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
-lm/lmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr12.pf
-b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2012/texm
-f-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (15 pages, 665141 bytes).
+l/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2012
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2012/t
+exmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2012/texmf-dist/
+fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
+/public/lm/lmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/
+lmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/loca
+l/texlive/2012/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on report.pdf (15 pages, 645207 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

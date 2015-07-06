@@ -591,8 +591,8 @@ the ic-tese documentation.}}{}
                 \noindent\begin{minipage}[!h]{\textwidth}
                         \center
                         \begin{tabular}{@{}p{.50\textwidth}p{.50\textwidth}@{}}
-                                {\small\@thesis\ de \@degreesought\ presentada al Programa de Postgrado del \faculty de la \university para obtener el t\'itulo de \@titlesought\ en Ciencias de la Computaci\'on.} &
-                                {\foreignlanguage{brazil}{\small\emph{\@tesept\ de \@degreesoughtpt\ apresentada ao Programa de P\'os-Gradua\c{c}{\~a}o em Ci\^encia da Computa\c{c}{\~a}o do \@facultypt\ da \@universitypt\ para obten\c{c}{\~a}o do t{\'\i}tulo de \@titlesoughtpt\ em Ci{\^e}ncia da Computa\c{c}{\~a}o.}}}\tabularnewline
+                                {} &
+                                {Relátorio para disciplina MC040 - Estágio de Iniciação Científica I\tabularnewline[-6pt]}\tabularnewline
                                 & \tabularnewline[-6pt]
                                 \textaboutversion
                         \end{tabular}
@@ -607,12 +607,12 @@ the ic-tese documentation.}}{}
                         }
                 \else
                         \def\textaboutversion{
-                                {\small \textsc{HUEHUEHUEHUEste exemplar corresponde \`{a} vers{\~a}o da \@tesept\ apresentada \`{a} banca examinadora por \@author, sob orienta\c{c}{\~a}o de ~\@principaladvisor.}}
+ 
                         }
                 \fi
                         \begin{tabular}{@{}p{.9\textwidth}}
                                 \begin{flushleft}
-                                \hspace*{0.3\textwidth}\@tesept\ de \@degreesoughtpt\ apresentada ao Programa de P\'os-Gradua\c{c}{\~a}o em Ci\^encia da Computa\c{c}{\~a}o do \@facultypt\ da \@universitypt\ para obten\c{c}{\~a}o do t{\'\i}tulo de \@titlesoughtpt\ em Ci{\^e}ncia da Computa\c{c}{\~a}o.
+                                {Rel{\´{a}}torio para disciplina MC040 - Est{\´{a}}gio de Inicia\c{c}{\˜a}o Cient{\´{i}}fica I\tabularnewline[-6pt]}
                                 \end{flushleft}
                         \end{tabular}
 
