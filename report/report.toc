@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {2}Atividades desenvolvidas}{2}{chapter.2}
 \contentsline {chapter}{\numberline {3}Metodologia}{3}{chapter.3}
 \contentsline {chapter}{\numberline {4}Resultados}{5}{chapter.4}
-\contentsline {chapter}{\numberline {5}Considera\IeC {\c c}\IeC {\~o}es finais}{7}{chapter.5}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{7}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conhecimentos adquiridos}{8}{chapter.6}
 \contentsline {section}{\numberline {6.1}Aplicabilidade}{8}{section.6.1}
 \contentsline {section}{\numberline {6.2}Incorpora\IeC {\c c}\IeC {\~a}o de novas t\IeC {\'e}cnicas}{8}{section.6.2}
