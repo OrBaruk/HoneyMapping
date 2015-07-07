@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex report"] 1436295069 "report.aux" "report.bbl" "report" 1436295097
+["bibtex report"] 1436301209 "report.aux" "report.bbl" "report" 1436301211
   "/usr/local/texlive/2012/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "mybib.bib" 1435780415 1126 9c472c3098a3e1cc0c2608d21e985871 ""
-  "report.aux" 1436295096 3999 c1cd8329aa57cf50b9c9c6b3a878cc4e ""
+  "mybib.bib" 1436301207 1290 7c6b731e82685e566abed78542324936 ""
+  "report.aux" 1436301210 4022 1c09c436237aa747d14f3a79513b85d1 ""
   "report.bcf" 0 -1 0 ""
   (generated)
-  "report.bbl"
   "report.blg"
-["pdflatex"] 1436295095 "report.tex" "report.pdf" "report" 1436295097
+  "report.bbl"
+["pdflatex"] 1436301209 "report.tex" "report.pdf" "report" 1436301211
   "/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii" 1337017135 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2012/texmf-dist/tex/generic/babel/babel.def" 1312409092 29228 2fe939254f4b17ac18a8c0fb8aa39dff ""
   "/usr/local/texlive/2012/texmf-dist/tex/generic/babel/babel.sty" 1312409092 9157 414843659be58197b1510e2317ef76d9 ""
@@ -89,16 +89,16 @@
   "logo-ic-unicamp-slant-line-wht-sky-ora-0480.eps" 1435332501 239602 c94b53c1088f645cdccf66f898976408 ""
   "logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf" 1435332501 20567 8306abd285b6ac536d57463f0b5b1dbf ""
   "logo-unicamp-name-line-blk-red-0480.eps" 1435332501 124700 3401926e1d8ccefe6d7cb8bcec12515a ""
-  "report.aux" 1436295096 3999 c1cd8329aa57cf50b9c9c6b3a878cc4e ""
-  "report.bbl" 1436295069 902 1fb959063473049f3ee2354dbd1e5421 "bibtex report"
-  "report.out" 1436295096 770 6a79e4a346296a9f25c66dae17fc6175 ""
-  "report.tex" 1436295094 16296 e2e7e2b0e30592d98cc034b8697a1959 ""
-  "report.toc" 1436295096 1066 7db0e23495ca2f29324ec14a01fb9ac1 ""
+  "report.aux" 1436301210 4022 1c09c436237aa747d14f3a79513b85d1 ""
+  "report.bbl" 1436301209 1051 a8147698d3dd615f42cd3aa3c6a97b79 "bibtex report"
+  "report.out" 1436301210 770 6a79e4a346296a9f25c66dae17fc6175 ""
+  "report.tex" 1436301085 16534 4af213c5d9618da7f4b0f12e57be4eaa ""
+  "report.toc" 1436301210 1067 98ec72f7ecc72a3f7717e7af64d94678 ""
   (generated)
-  "logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf"
-  "report.aux"
-  "report.toc"
+  "logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf"
   "report.pdf"
   "report.log"
-  "logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf"
   "report.out"
+  "report.aux"
+  "logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf"
+  "report.toc"

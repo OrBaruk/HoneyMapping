@@ -13,9 +13,7 @@
 \principaladvisor{Prof. Dr. Paulo Licio de Geus}
 \coadvisor{Prof. Dr. André Abed Grégio}
 
-
 \beforepreface
-
 \begin{oresumo}
 O projeto tem como objetivo a implantação de um sistema para o tratamento e visualização de dados coletados por meio de sensores participantes de uma infra-estrutura de coleta de programas maliciosos.
 
@@ -23,7 +21,6 @@ Esse sistema foi desenvolvido fazendo o uso de tecnologias Web para o desenvolvi
 
 O uso funcionalidades integradas no sistema proposto pelo presente projeto permitirá que um analista consiga identificar os padrões e as tendências das atividades maliciosas registradas, tornando possível conclusões acerca dos dados observados.
 \end{oresumo}
-
 \afterpreface   
 
 
@@ -34,10 +31,21 @@ A facilidade da geração de novos exemplares a partir de um malware já existen
 
 A fim de obter programas maliciosos e as suas variantes, necessita-se de uma infraestrutura de coleta distribuída. A motivação principal para essa infraestrutura é a de obter e armazenar exemplares dos malwares em circulação no Brasil para análises posteriores melhorando as atuações dos mecanismos de defesa. 
 
-Uma vez tendo acesso aos exemplares de malwares armazenados, pretende-se obter informações acerca dos tipos de malwares que atacam as redes brasileiras que possuem sensores de coleta (honeypots). 
+Uma vez tendo acesso aos exemplares de malwares armazenados, pretende-se obter informações acerca dos tipos de malwares que atacam as redes brasileiras que possuem sensores de coleta (honeypots)\cite{certhoney}. 
 
-As informações obtidas desses honeypots de coleta incluem tráfego de rede, registros de auditoria (logs) das vulnerabilidades exploradas e tipos de ataques utilizados no comprometimento dos serviços/sistemas e do binário que representa o programa malicioso. De posse de tais informações é possível representá-las  por meio de técnicas de visualização e disponibilizá-las por meio de uma arquitetura Web, permitindo a observação imediata de tendências ataques de uma maneira local (em cada rede) e global (conjunto das redes com sensores), além de geração de estatísticas.
+As informações obtidas desses honeypots de coleta incluem tráfego de rede, registros de auditoria (\emph{logs}) das vulnerabilidades exploradas e tipos de ataques utilizados no comprometimento dos serviços/sistemas e do binário que representa o programa malicioso. De posse de tais informações é possível representá-las  por meio de técnicas de visualização e disponibilizá-las por meio de uma arquitetura Web, permitindo a observação imediata de tendências ataques de uma maneira local (em cada rede) e global (conjunto das redes com sensores), além de geração de estatísticas.
 
+
+\begin{table}
+	\center
+	\caption{Exemplo de única linha de log usado para popular a base de dados.}
+	\label{tab:log}
+	\begin{tabular}{|c|}
+		\hline
+		-rw------- 1 pakkun pakkun  1779 Jun 28  2014 epmapper-135-23.95.27.150-X8bRRa\\
+		\hline		
+	\end{tabular}
+\end{table}
 
 \chapter{Atividades desenvolvidas}
 
@@ -57,7 +65,14 @@ No início do projeto foi necessário um estudo preliminar que permitiu obter co
 Para tanto, observaram-se as ferramentas e os sistemas para visualização de dados de segurança já existentes, entre os quais as disponíveis pelos Projetos Honeynet\cite{honeynet}, Norse\cite{ipviking} e DioneaFR\cite{dioneaefr}, visto que os objetivos e as funcionalidades providas por essas ferramentas possuem componentes similares aos propostos no presente projeto. Entretanto, tais ferramentas/sistemas são limitados em certos aspectos, por exemplo: tipo e abrangência de dados, necessidade de compartilhamento de informações remotamente, entre outros, o que gera a necessidade de desenvolvimento de um sistema interno, de acesso controlado e extensível para os requisitos específicos dos dados coletados.
 Após essa análise inicial e tendo definido as ferramentas a serem utilizadas, o enfoque do estudo foi em adquirir proficiência nas plataformas de desenvolvimento e ferramentas escolhidas para uso no projeto: Django, Jquery, Jvectormap, D3js, GeoIP, iNotify.
 
-Para o controle de versão dos componentes de có́digo produzidos ao longo do projeto foi utilizado o sistema \emph{git}. Tais có́digos são armazenados em um repositó́rio privado criado no GitHub através de uma conta de estudante habilitada pelo bolsista. O repositó́rio consiste de dois ramos: o ramo mestre, no qual se mantém a versão mais atual do projeto com suas funcionalidades mais recentes, e o ramo demonstração, onde fica a ultima versão estável com o objetivo de ser utilizada para demonstrações funcionais do protótipo do sistema.
+Para o controle de versão dos componentes de có́digo produzidos ao longo do projeto foi utilizado o sistema \emph{git}. Tais có́digos são armazenados em um repositó́rio privado criado no GitHub através de uma conta de estudante. O repositó́rio consiste de dois ramos: o ramo mestre, no qual se mantém a versão mais atual do projeto com suas funcionalidades mais recentes, e o ramo demonstração, onde fica a ultima versão estável com o objetivo de ser utilizada para demonstrações funcionais do protótipo do sistema.
+
+\begin{figure}
+\center
+\includegraphics[width=0.85\textwidth]{figs/git.png}
+\caption{Repositório criado no github para controle de versão do código gerado.}
+\label{mapa}
+\end{figure}
 
 O framework Django\cite{django} em linguagem Python foi escolhido para constituir da infra-estrutura principal do projeto, tendo como função prover serviços de administração no back-end, assim como servir o có́digo em JavaScript a ser executado pelo cliente em um navegador Web. O Django também permite um fácil gerenciamento da base de dados (sqlite3) através da criação de procedimentos para administração. Foram desenvolvidas rotinas em shell script para consolidar os dados coletados na base de dados por meio dos procedimentos mencionados.
 
@@ -65,9 +80,7 @@ Uma arquitetura REST (Representational State Transfer) foi implantada fazendo us
 
 Para solucionar o problema de relacionar o endereço IP de origem do ataque com sua posição geográfica no mundo real, utilizou-se a ferramenta GeoIP\cite{geoip}, que permite baixar uma base relacional de IPs e latitude/longitude. Com isso, é possível traduzir a maioria dos endereços para localizações no mapa, obtendo também o país e a cidade de origem.
 
-A visualização dos dados pelo cliente foi realizada pelo uso de bibliotecas de có́digo aberto baseados em JavaScript, sendo elas: jVectorMap\cite{jvectormap}, que permite a fácil criação e modificação de mapas interativos; D3js para a geração de gráficos contendo estatísticas gerais sobre os dados coletados; jQuery\cite{jquery}, que permite a criação de elementos de interface para prover interação com o usuário.
-
-Um protótipo do sistema foi instalado em uma máquina provida pelo coorientador, a qual já continha dados de segurança coletados em um projeto envolvendo outro bolsista (infraestrutura distribuída para coleta e análise de dados de honeypots). Nesta máquina, os procedimentos previamente instalados fazem o polling dos dados coletados por sensores distribuídos e os agrega em uma estrutura no sistema de arquivos. Com todos os sistemas em funcionamento, o serviço Web que consome e processa tais dados atualiza sua informações de forma autônoma, provendo a visualização desejada.
+Após obter as localizações no mundo real a partir dos IPs os dados foram inseridos em uma base de dados em sqlite3 utilizando ferramentas do Django para o gerenciamento, o modelo de tabelas utilizado pela base de dados pode ser visualizado na tablela \ref{tab:db}.
 
 \begin{table}
 	\center
@@ -107,16 +120,9 @@ Um protótipo do sistema foi instalado em uma máquina provida pelo coorientador
 	\end{tabular}
 \end{table}
 
-\begin{table}
-	\center
-	\caption{Exemplo de única linha de log usado para popular a base de dados.}
-	\label{tab:log}
-	\begin{tabular}{|c|}
-		\hline
-		-rw------- 1 pakkun pakkun  1779 Jun 28  2014 epmapper-135-23.95.27.150-X8bRRa\\
-		\hline		
-	\end{tabular}
-\end{table}
+A visualização dos dados pelo cliente foi realizada pelo uso de bibliotecas de có́digo aberto baseados em JavaScript, sendo elas: jVectorMap\cite{jvectormap}, que permite a fácil criação e modificação de mapas interativos; D3js para a geração de gráficos contendo estatísticas gerais sobre os dados coletados; jQuery\cite{jquery}, que permite a criação de elementos de interface para prover interação com o usuário.
+
+Um protótipo do sistema foi instalado em uma máquina provida pelo coorientador, a qual já continha dados de segurança coletados em um outro projeto (infraestrutura distribuída para coleta e análise de dados de honeypots). Nesta máquina, os procedimentos previamente instalados fazem o polling dos dados coletados por sensores distribuídos e os agrega em uma estrutura no sistema de arquivos. Com todos os sistemas em funcionamento, o serviço Web que consome e processa tais dados atualiza sua informações de forma autônoma, provendo a visualização desejada.
 
 \chapter{Resultados}
 O resultado final foi um protótipo de um sistema cuja ferramenta principal permite a visualização de dados de potenciais ataques a protocolos de rede e aplicações de sistema, bem como de servidores comprometidos realizando o provimento de có́digos maliciosos para sensores distribuídos. A visualização desses dados é feita em um mapa, no qual são correlacionadas a origem do ataque (coordenadas geográficas do endereço IP obtido) com a frequência das ocorrências do ataque em questão (raio do círculo impresso em sua coordenada específica).
@@ -128,18 +134,10 @@ Desenvolveu-se uma imagem em máquina virtual para VirtualBox. A configuração 
 \center
 \includegraphics[width=1\textwidth]{figs/mapa.png}
 \caption{Mapa mostrado pela interface web retratando os locais de origem dos ataques.}
-\label{mapa}
+\label{fig:mapa}
 \end{figure}
 
-\begin{figure}
-\center
-\includegraphics[width=0.85\textwidth]{figs/git.png}
-\caption{Repositório criado no github para controle de versão do código gerado.}
-\label{mapa}
-\end{figure}
-
-
-A Figura \ref{mapa} representa um mapa em um dado instante de tempo com dados de potenciais ataques apresentados de acordo com a localização geográfica do endereço IP obtido, bem como outras informações (vide quadro escuro na América do Norte), tais como, a cidade estimada por meio das coordenadas obtidas do IP, o tipo do ataque (serviço alvo) e a porta de rede vulnerável que recebeu o ataque. Logo abaixo do mapa, pode-se notar uma barra de rolagem, a qual movimenta-se de forma automática para mostrar as tendências de ataque ao longo do dia e, mais abaixo, um gráfico que representa os protocolos monitorados e a frequência das conexões recebidas por estes protocolos no instante de tempo em questão.
+A Figura \ref{fig:mapa} representa um mapa em um dado instante de tempo com dados de potenciais ataques apresentados de acordo com a localização geográfica do endereço IP obtido, bem como outras informações (vide quadro escuro na América do Norte), tais como, a cidade estimada por meio das coordenadas obtidas do IP, o tipo do ataque (serviço alvo) e a porta de rede vulnerável que recebeu o ataque. Logo abaixo do mapa, pode-se notar uma barra de rolagem, a qual movimenta-se de forma automática para mostrar as tendências de ataque ao longo do dia e, mais abaixo, um gráfico que representa os protocolos monitorados e a frequência das conexões recebidas por estes protocolos no instante de tempo em questão.
 
 
 \chapter{Conclusões}

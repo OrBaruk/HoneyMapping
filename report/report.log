@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 JUL 2015 15:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  7 JUL 2015 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,28 +681,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
-(./report.aux
-
-LaTeX Warning: Label `mapa' multiply defined.
-
-)
+(./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 8.
  (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -756,7 +752,7 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 9.
+Package hyperref Info: Link coloring OFF on input line 8.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -765,9 +761,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count136
 )
-LaTeX Info: Redefining \ref on input line 9.
-LaTeX Info: Redefining \pageref on input line 9.
-LaTeX Info: Redefining \nameref on input line 9.
+LaTeX Info: Redefining \ref on input line 8.
+LaTeX Info: Redefining \pageref on input line 8.
+LaTeX Info: Redefining \nameref on input line 8.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
@@ -782,7 +778,7 @@ nverted-to.pdf>
 (epstopdf)                    size: 20567 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-unicamp-name-line-blk
 -red-0480-eps-converted-to.pdf logo-unicamp-name-line-blk-red-0480.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
 <logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf, id=56, 481.8pt x 481
@@ -791,7 +787,7 @@ File: logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-unicamp-name-line-blk-red-0480-eps-converted-to.p
-df used on input line 18.
+df used on input line 16.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
 Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 0.eps>
@@ -804,7 +800,7 @@ Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 (epstopdf)             Command: <repstopdf --outfile=logo-ic-unicamp-slant-line
 -wht-sky-ora-0480-eps-converted-to.pdf logo-ic-unicamp-slant-line-wht-sky-ora-0
 480.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 
 <logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf, id=57, 481.8
@@ -814,7 +810,7 @@ file (type pdf)
 
 <use logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-conver
-ted-to.pdf used on input line 18.
+ted-to.pdf used on input line 16.
 (pdftex.def)             Requested size: 73.97733pt x 63.49303pt.
  [1
 
@@ -829,14 +825,14 @@ nverted-to.pdf>
 (epstopdf)                    size: 20567 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-unicamp-name-line-blk
 -red-0480-eps-converted-to.pdf logo-unicamp-name-line-blk-red-0480.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 File: logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf Graphic file (ty
 pe pdf)
 
 <use logo-unicamp-name-line-blk-red-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-unicamp-name-line-blk-red-0480-eps-converted-to.p
-df used on input line 18.
+df used on input line 16.
 (pdftex.def)             Requested size: 71.13188pt x 71.12737pt.
 Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 0.eps>
@@ -849,45 +845,45 @@ Package epstopdf Info: Source file: <logo-ic-unicamp-slant-line-wht-sky-ora-048
 (epstopdf)             Command: <repstopdf --outfile=logo-ic-unicamp-slant-line
 -wht-sky-ora-0480-eps-converted-to.pdf logo-ic-unicamp-slant-line-wht-sky-ora-0
 480.eps>
-(epstopdf)             \includegraphics on input line 18.
+(epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 File: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf Graphic 
 file (type pdf)
 
 <use logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-converted-to.pdf>
 Package pdftex.def Info: logo-ic-unicamp-slant-line-wht-sky-ora-0480-eps-conver
-ted-to.pdf used on input line 18.
+ted-to.pdf used on input line 16.
 (pdftex.def)             Requested size: 73.97733pt x 63.49303pt.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 18.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 16.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 18.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 16.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 18.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 16.
 
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 18.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 16.
  [2
 
 ]
 ! Undefined control sequence.
 \beforepreface ... \documentsetup {1} \fi \titlep 
                                                   \ifcopyright \clearemptydo...
-l.18 \beforepreface
+l.16 \beforepreface
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -908,7 +904,7 @@ and I'll forget about whatever was undefined.
 ]
 Cap\'{\i }tulo 1.
 
-Overfull \hbox (8.06934pt too wide) in paragraph at lines 32--33
+Overfull \hbox (8.06934pt too wide) in paragraph at lines 28--29
 \OT1/lmr/m/n/12 Os pro-gra-mas ma-li-ci-o-sos (\OT1/lmr/m/it/12 malwa-res\OT1/l
 mr/m/n/12 ) re-pre-sen-tam uma das mai-o-res amea^^Xcas aos usu^^Sarios
  []
@@ -920,17 +916,17 @@ mr/m/n/12 ) re-pre-sen-tam uma das mai-o-res amea^^Xcas aos usu^^Sarios
 ]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
@@ -941,7 +937,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.53 ...s as atividades desenvolvidas foi també́
+l.60 ...s as atividades desenvolvidas foi també́
                                                   m feita a documentação d...
 
 Your command was ignored.
@@ -959,7 +955,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 ...ntrole de versão dos componentes de có́
+l.68 ...ntrole de versão dos componentes de có́
                                                   digo produzidos ao longo d...
 
 Your command was ignored.
@@ -973,7 +969,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 ...utilizado o sistema \emph{git}. Tais có́
+l.68 ...utilizado o sistema \emph{git}. Tais có́
                                                   digos são armazenados em ...
 
 Your command was ignored.
@@ -987,7 +983,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 ...́digos são armazenados em um repositó́
+l.68 ...́digos são armazenados em um repositó́
                                                   rio privado criado no GitH...
 
 Your command was ignored.
@@ -1001,12 +997,18 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 ...te habilitada pelo bolsista. O repositó́
+l.68 ...s de uma conta de estudante. O repositó́
                                                   rio consiste de dois ramos...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
+
+<figs/git.png, id=119, 1011.78pt x 769.87625pt>
+File: figs/git.png Graphic file (type png)
+ <use figs/git.png>
+Package pdftex.def Info: figs/git.png used on input line 72.
+(pdftex.def)             Requested size: 370.03075pt x 281.5605pt.
 
 
 ! Package inputenc Error: Unicode char \u8:́ not set up for use with LaTeX.
@@ -1015,7 +1017,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 ...ão no back-end, assim como servir o có́
+l.77 ...ão no back-end, assim como servir o có́
                                                   digo em JavaScript a ser e...
 
 Your command was ignored.
@@ -1029,7 +1031,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.65 ...m encaminhados ao cliente executando có́
+l.79 ...m encaminhados ao cliente executando có́
                                                   digo JavaScript no formato...
 
 Your command was ignored.
@@ -1040,13 +1042,16 @@ or  <return>  to continue without it.
 
 ]
 
+LaTeX Warning: Reference `ttab:db' on page 4 undefined on input line 83.
+
+
 ! Package inputenc Error: Unicode char \u8:́ not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.69 ...realizada pelo uso de bibliotecas de có́
+l.123 ...ealizada pelo uso de bibliotecas de có́
                                                   digo aberto baseados em Ja...
 
 Your command was ignored.
@@ -1060,14 +1065,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 ...atualiza sua informações de forma autô
+l.125 ...tualiza sua informações de forma autô
                                                   noma, provendo a visualiza...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[4]
+[4 <./figs/git.png>] [5]
 Cap\'{\i }tulo 4.
 
 ! Package inputenc Error: Unicode char \u8:́ not set up for use with LaTeX.
@@ -1076,34 +1081,29 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.123 ...ometidos realizando o provimento de có́
+l.128 ...ometidos realizando o provimento de có́
                                                   digos maliciosos para sens...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<figs/mapa.png, id=137, 1333.98375pt x 839.135pt>
+<figs/mapa.png, id=147, 1333.98375pt x 839.135pt>
 File: figs/mapa.png Graphic file (type png)
  <use figs/mapa.png>
-Package pdftex.def Info: figs/mapa.png used on input line 130.
+Package pdftex.def Info: figs/mapa.png used on input line 135.
 (pdftex.def)             Requested size: 435.32718pt x 273.8424pt.
+ [6
 
-<figs/git.png, id=138, 1011.78pt x 769.87625pt>
-File: figs/git.png Graphic file (type png)
- <use figs/git.png>
-Package pdftex.def Info: figs/git.png used on input line 137.
-(pdftex.def)             Requested size: 326.49538pt x 248.43297pt.
- [5
-
-] [6 <./figs/mapa.png (PNG copy)> <./figs/git.png>]
+]
+[7 <./figs/mapa.png (PNG copy)>]
 Cap\'{\i }tulo 5.
-[7
+[8
 
 ]
 Cap\'{\i }tulo 6.
 
-Overfull \hbox (10.97765pt too wide) in paragraph at lines 156--157
+Overfull \hbox (10.97765pt too wide) in paragraph at lines 153--154
 \OT1/lmr/m/n/12 Os co-nhe-ci-men-tos ad-qui-ri-dos du-rante esse pro-jeto pos-s
 uem uma am-pla ^^Sarea de aplica^^Xc~ao,
  []
@@ -1115,43 +1115,48 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.162 ...ua posição geográfica possui importâ
+l.159 ...ua posição geográfica possui importâ
                                                   ncia.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[8
+[9
 
-] (./report.bbl [9]
+] (./report.bbl [10]
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 5.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
- [10
+)
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/lmr/m/n/12 CERT.br dis-tri-bu-ted ho-ney-pots pro-ject.  []$\OT1/lmtt/m/
+n/12 http : / / honeytarg . cert . br /
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+ [11
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
-
-(./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+ (./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 6A79E4A346296A9F25C66DAE17FC6175;770.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
  ) 
 Here is how much of TeX's memory you used:
- 8332 strings out of 493488
- 125458 string characters out of 3141326
- 259192 words of memory out of 3000000
- 11404 multiletter control sequences out of 15000+200000
+ 8338 strings out of 493488
+ 125525 string characters out of 3141326
+ 256272 words of memory out of 3000000
+ 11408 multiletter control sequences out of 15000+200000
  48821 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,9n,41p,1016b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1164,10 +1169,10 @@ fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
 lmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (15 pages, 850003 bytes).
+Output written on report.pdf (16 pages, 851398 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
