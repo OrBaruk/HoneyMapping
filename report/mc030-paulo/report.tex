@@ -36,17 +36,6 @@ Uma vez tendo acesso aos exemplares de malwares armazenados, pretende-se obter i
 As informações obtidas desses honeypots de coleta incluem tráfego de rede, registros de auditoria (\emph{logs}) das vulnerabilidades exploradas e tipos de ataques utilizados no comprometimento dos serviços/sistemas e do binário que representa o programa malicioso. De posse de tais informações é possível representá-las  por meio de técnicas de visualização e disponibilizá-las por meio de uma arquitetura Web, permitindo a observação imediata de tendências ataques de uma maneira local (em cada rede) e global (conjunto das redes com sensores), além de geração de estatísticas.
 
 
-\begin{table}
-	\center
-	\caption{Exemplo de única linha de log usado para popular a base de dados.}
-	\label{tab:log}
-	\begin{tabular}{|c|}
-		\hline
-		-rw------- 1 pakkun pakkun  1779 Jun 28  2014 epmapper-135-23.95.27.150-X8bRRa\\
-		\hline		
-	\end{tabular}
-\end{table}
-
 \chapter{Atividades desenvolvidas}
 
 Para alcançar os objetivos propostos no projeto, as seguintes atividades foram desenvolvidas:
@@ -83,20 +72,17 @@ Para solucionar o problema de relacionar o endereço IP de origem do ataque com 
 Após obter as localizações no mundo real a partir dos IPs os dados foram inseridos em uma base de dados em sqlite3 utilizando ferramentas do Django para o gerenciamento, o modelo de tabelas utilizado pela base de dados pode ser visualizado na tablela \ref{tab:db}.
 
 \begin{table}
-	\center
-	\caption{Tabelas utilizadas pela base de dados para organizar informações coletadas.}
+	%\center
+	\caption{Exemplo de um log de entrada e o resultado obtido ao inserir as informações na base de dados.}
 	\label{tab:db}
-	\begin{tabular}{|c|c|c|}
-		\cline{1-1}
-		\textbf{Attacks} & \multicolumn{2}{l}{}\\
+	\begin{tabular}{|c|}
+		\multicolumn{1}{c}{}\\
 		\hline
-		key(\emph{PK}) & dateTime 			& source\_id(\emph{FK})\\
-		\hline
-		kGBDlq 			 & 2014-10-06-18:34:57  & 6752\\
-		\hline
-		\multicolumn{3}{c}{}\\
+		-rw------ - 1 pakkun pakkun  1779 Oct 06  2014 ftpd-6752-115.29.224.200-kGBDlq\\
+		\hline	
+		\multicolumn{1}{c}{}\\
 	\end{tabular}
-	\\
+
 	\begin{tabular}{|c|c|c|c|c|}
 		\cline{1-1}
 		\textbf{Locations} & \multicolumn{4}{l}{}\\
@@ -107,7 +93,7 @@ Após obter as localizações no mundo real a partir dos IPs os dados foram inse
 		\hline
 		\multicolumn{5}{c}{}\\
 	\end{tabular}
-	\\
+
 	\begin{tabular}{|c|c|c|c|c|}
 		\cline{1-1}
 		\textbf{Sources} & \multicolumn{4}{l}{}\\
@@ -118,7 +104,19 @@ Após obter as localizações no mundo real a partir dos IPs os dados foram inse
 		\hline
 		\multicolumn{5}{c}{}\\
 	\end{tabular}
+
+	\begin{tabular}{|c|c|c|}
+		\cline{1-1}
+		\textbf{Attacks} & \multicolumn{2}{l}{}\\
+		\hline
+		key(\emph{PK}) & dateTime 			& source\_id(\emph{FK})\\
+		\hline
+		kGBDlq 			 & 2014-10-06-18:34:57  & 6752\\
+		\hline
+		\multicolumn{3}{c}{}\\
+	\end{tabular}
 \end{table}
+
 
 A visualização dos dados pelo cliente foi realizada pelo uso de bibliotecas de có́digo aberto baseados em JavaScript, sendo elas: jVectorMap\cite{jvectormap}, que permite a fácil criação e modificação de mapas interativos; D3js para a geração de gráficos contendo estatísticas gerais sobre os dados coletados; jQuery\cite{jquery}, que permite a criação de elementos de interface para prover interação com o usuário.
 
