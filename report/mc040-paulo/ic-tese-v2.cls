@@ -660,7 +660,7 @@ the ic-tese documentation.}}{}
                         %Espanol
                         \or {\small Firma de Director(a)/ \emph{Assinatura do Orientador(a)}}
                         %Portugues
-                        \else {\small Assinatura do Orientador(a)}
+                        \else {\small Assinatura do Aluno}
                         \fi\\
 % End Conditionality
                         \vspace{.25cm}
