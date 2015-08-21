@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>HoneyMapping</title>
-	
+
 	<link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/jquery-jvectormap-1.2.2.css"/>
 	<link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/jquery-ui-1.8.22.custom.css"/>
 	<script src="{{ STATIC_URL }}jslib/jquery-1.8.2.min.js"></script>
@@ -26,14 +26,14 @@
 		var initialMonth;
 
 		$('#dp3').datepicker();
-			
+
 		var d = new Date();
 
 		var curMonth = d.getMonth()+1 // console.log(d.getMonth()+1); // numero do mes
 		var curDay = d.getDate() // console.log(d.getDate()); // dia do mes
 		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate() // console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate()); //dias no mes
 
-		$.getJSON("http://127.0.0.1:8000/report/2014/08/2/0/0/2014/10/2/23/59/", function(data){
+		$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
 		//$.getJSON("http://127.0.0.1:8000/report/2014/09/20/00/00/2014/09/20/25/59/", function(data){
 			initialMonth = data;
 			Map.init(data['markers'], data['count'], data['regions']);
@@ -42,7 +42,7 @@
 
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script src="{{ STATIC_URL }}js/slider.js"></script>
-	
+
 
 	<div id="piechart" align="center">
 		<svg id = "chartsvg" style="width: 1300px; height: 200px"></svg>

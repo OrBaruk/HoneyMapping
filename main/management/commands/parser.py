@@ -14,7 +14,7 @@ class Command(BaseCommand):
 		self.stdout.write(args[0])
 
 		#call function to parse the logs
-		parse_logs('/Users/or/LAS/HoneyMapping/data/'+args[0], args[0], '/usr/local/share/GeoIP/GeoIPCity.dat')
+		parse_logs('/Users/or/LAS/HoneyMapping/data/logs_jul2015/'+args[0]+'.txt', args[0], '/usr/local/share/GeoIP/GeoIPCity.dat')
 
 		return
 
@@ -34,17 +34,28 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 			continue
 		#print(rows[8])
 
-		aux = rows[5].split('-')
-		year	  = aux[0]		
-		month	  = aux[1]
-		day  	  = aux[2]
-		print(rows[5]+' '+rows[6])
+		m = dict()
+		m['Jan'] = '01'
+		m['Feb'] = '02'
+		m['Mar'] = '03'
+		m['Apr'] = '04'
+		m['May'] = '05'
+		m['Jun'] = '06'
+		m['Jul'] = '07'
 
-		time 	  = rows[6]
+		aux = rows[5].split('-')
+		year	  = '2015' #aux[0]		
+		month	  = m[rows[5]] #aux[1]
+		day  	  = rows[6] #aux[2]
+
+		#print(rows[5]+' '+rows[6])
+
+		time 	  = rows[7]
 
 		aux	 = rows[8].split('-')
 		if len(aux) != 4: # Checks if the line has correct parameters
 			continue
+		print(year+'-'+month+'-'+day+"\t"+rows[8])
 
 		protc     = aux[0]
 		port	  = aux[1]
@@ -89,7 +100,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		s.save()
 		a = Attack(
 				key		  = hashKey,
-				dateTime  = rows[5]+' '+rows[6],
+				dateTime  = year+'-'+month+'-'+day+' '+time, #rows[5]+' '+rows[6],
 
 				source    = s,
 			)

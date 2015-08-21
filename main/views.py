@@ -35,8 +35,8 @@ def report(request, startYear, startMonth, startDay, startHour, startMinute, end
 						"ip_locations.longitude, "
 						"sources.collector "
 					"FROM attacks "
-					"INNER JOIN sources on attacks.source_id == sources.id "
-					"INNER JOIN ip_locations on ip_locations.ip == sources.location_id "
+					"INNER JOIN sources ON attacks.source_id == sources.id "
+					"INNER JOIN ip_locations ON ip_locations.ip == sources.location_id "
 					"WHERE dateTime BETWEEN ? AND ?")
 	cursor.execute(queryString, (startDate, endDate)) #sql wrapers escapes characters if needed
 
@@ -58,8 +58,8 @@ def report(request, startYear, startMonth, startDay, startHour, startMinute, end
 		cursor2 = connection.cursor()
 		queryString = ( "SELECT COUNT(ip_locations.ip) "
 						"FROM attacks "
-						"INNER JOIN sources on attacks.source_id == sources.id "
-						"INNER JOIN ip_locations on ip_locations.ip == sources.location_id  "
+						"INNER JOIN sources ON attacks.source_id == sources.id "
+						"INNER JOIN ip_locations ON ip_locations.ip == sources.location_id  "
 						"WHERE ip=? AND port=? AND dateTime BETWEEN ? AND ?")
 		cursor2.execute(queryString, (ip, port, startDate, endDate))
 		quantity = cursor2.fetchone()[0]
