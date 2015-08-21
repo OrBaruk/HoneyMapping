@@ -33,8 +33,8 @@
 		var curDay = d.getDate() // console.log(d.getDate()); // dia do mes
 		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate() // console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate()); //dias no mes
 
-		$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
-		//$.getJSON("http://127.0.0.1:8000/report/2014/09/20/00/00/2014/09/20/25/59/", function(data){
+		//$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
+		$.getJSON("http://127.0.0.1:8000/report/2014/09/20/00/00/2014/09/20/25/59/", function(data){
 			initialMonth = data;
 			Map.init(data['markers'], data['count'], data['regions']);
 		});
