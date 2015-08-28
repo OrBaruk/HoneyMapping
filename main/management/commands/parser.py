@@ -15,7 +15,7 @@ class Command(BaseCommand):
 
 		#call function to parse the logs
 		# geoIPLibpath = "/usr/local/share/GeoIP/GeoIPCity.dat"
-		parse_logs(+args[0]+'.txt', args[0], args[1])
+		parse_logs(args[0]+'.txt', args[1], args[2])
 
 		return
 
