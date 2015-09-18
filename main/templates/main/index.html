@@ -16,16 +16,13 @@
 	<div id="world-map" style="width: 1300px; height: 600px;" align="center"></div>
 	<div style="width: 1300px; height: 600px;" align="center">
 		<button id="button-9"></button>
-		<div id="slider" style="width: 1200px; height: 10px; margin-top: 15px;"align="center"></div>
-	</div>
- 	<div class="well">
-		<input type="text" class="span2" value="02-16-2012" id="dp3" >
+		<div id="slider" style="width: 1200px; height: 10px; margin-top: 15px;" align="center"></div>
 	</div>
 
 	<script type="text/javascript">
 		var initialMonth;
 
-		$('#dp3').datepicker();
+		// $('#dp3').datepicker();
 
 		var d = new Date();
 
@@ -33,8 +30,8 @@
 		var curDay = d.getDate() // console.log(d.getDate()); // dia do mes
 		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate() // console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate()); //dias no mes
 
-		//$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
-		$.getJSON("http://127.0.0.1:8000/report/2014/09/20/00/00/2014/09/20/25/59/", function(data){
+		$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
+		//$.getJSON("http://127.0.0.1:8000/report/2015/06/20/00/00/2015/09/20/25/59/", function(data){
 			initialMonth = data;
 			Map.init(data['markers'], data['count'], data['regions']);
 		});

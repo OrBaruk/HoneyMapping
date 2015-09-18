@@ -15,7 +15,7 @@ class Command(BaseCommand):
 
 		#call function to parse the logs
 		# geoIPLibpath = "/usr/local/share/GeoIP/GeoIPCity.dat"
-		parse_logs(args[0]+'.txt', args[1], args[2])
+		parse_logs(args[0], args[1], args[2])
 
 		return
 
@@ -25,10 +25,10 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	f = open(filepath, 'r')
 
 	for line in f.readlines():
-		print(line)
 
 		rows = line.split()
-		if len(rows) != 6:# Checks if the line has correct parameters
+		if len(rows) != 8:# Checks if the line has correct parameters
+			print('oito?')
 			continue
 
 
@@ -36,6 +36,8 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 		if len(aux) != 4: # Checks if the line has correct parameters
 			continue
 
+		print(line),
+		
 		protc     = aux[0]
 		port	  = aux[1]
 		ipAddress = aux[2]
