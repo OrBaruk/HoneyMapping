@@ -25,25 +25,22 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	f = open(filepath, 'r')
 
 	for line in f.readlines():
-
 		rows = line.split()
 		if len(rows) != 8:# Checks if the line has correct parameters
 			print('oito?')
 			continue
 
-
 		aux	 = rows[7].split('-')
 		if len(aux) != 4: # Checks if the line has correct parameters
 			continue
 
-		print(line),
-		
+		print(line,end ='')
 		protc     = aux[0]
 		port	  = aux[1]
 		ipAddress = aux[2]
 		hashKey   = aux[3]
 
-		#Obtains geographic information from ip address
+		# Obtains geographic information from ip address
 		gir = gi.record_by_addr(ipAddress)
 		if gir:
 			# Converts the string from Latin-1 according to GeoIP documentation
@@ -59,7 +56,7 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 			lon = '0'
 			cc  = '??'
 
-		#Saves information into database
+		# Saves information into database
 		l = IpLocation(
 				ip       	= ipAddress,
 				latitude 	= lat,
