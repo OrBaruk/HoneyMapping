@@ -18,14 +18,25 @@ def plot_attacks_all():
 	x = []
 	y = []
 
+	totalDays = 0
+	average = 0
+
 	while start < finalDay:
 		cursor.execute(query, (start, end))
 
 		x.append(start)
-		y.append(cursor.fetchone()[0])
+		aux = cursor.fetchone()[0]
+		y.append(aux)
+		average += aux 
+		totalDays += 1
 
 		start = start + datetime.timedelta(days=1)
 		end = end + datetime.timedelta(days=1)
+
+	average = average / totalDays
+	print(totalDays)
+	print(average)
+
 
 	plt.plot(x, y, color='black')
 	plt.fill_between(x, 0, y, color='black')
@@ -48,14 +59,25 @@ def plot_attacks_distinct():
 	x = []
 	y = []
 
+	totalDays = 0
+	average = 0
 	while start < finalDay:
+		totalDays += 1
+
 		cursor.execute(query, (start, end))
 
 		x.append(start)
-		y.append(cursor.fetchone()[0])
+		aux = cursor.fetchone()[0]
+		y.append(aux)
+
+		average += aux 
 
 		start = start + datetime.timedelta(days=1)
 		end = end + datetime.timedelta(days=1)
+
+	average = average / totalDays
+	print(totalDays)
+	print(average)
 
 	plt.plot(x, y, color='black')
 	plt.fill_between(x, 0, y, color='black')
@@ -117,6 +139,32 @@ def plot_histogram_protocol(port):
 			" FROM attacks"
 			" INNER JOIN sources ON attacks.source_id == sources.id"
 			" WHERE sources.port == ?"
+			)
+
+	y = [0 for i in range(0,24)]
+
+	cursor.execute(query,(port,))	
+	row = cursor.fetchone()
+	while row:
+		y[int(row[0])] = y[int(row[0])] + 1
+		row = cursor.fetchone()
+
+	x = range(len(y))
+	width = 1/1.5
+
+	plt.bar(x,y, width, color='black')
+	plt.xlabel('Hora do Ataque')
+	plt.ylabel('Número de Conexões')
+	plt.xlim([0,24])
+	plt.show()
+
+def plot_histogram_protocol_not(port):
+	# portas na base 21, 80, 135, 445, 1433, 5060
+	cursor = sqlite3.connect('db.sqlite3').cursor()
+	query = ("SELECT strftime('%H', attacks.dateTime), attacks.source_id"
+			" FROM attacks"
+			" INNER JOIN sources ON attacks.source_id == sources.id"
+			" WHERE sources.port != ?"
 			)
 
 	y = [0 for i in range(0,24)]
