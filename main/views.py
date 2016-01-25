@@ -22,6 +22,12 @@ def report(request, startYear, startMonth, startDay, startHour, startMinute, end
 		endDay = '0'+endDay 
 
 	start = time.time()	
+
+	if len(endDay) == 1:
+		startDay = '0'+startDay
+	if len(endDay) == 1:
+		endDay = '0'+endDay
+
 	startDate = startYear+'-'+startMonth+'-'+startDay+' '+startHour+':'+startMinute+':00'
 	endDate   = endYear+'-'+endMonth+'-'+endDay+' '+endMinute+':'+endHour+':59'
 

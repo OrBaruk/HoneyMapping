@@ -2,9 +2,7 @@
 
 path="${1:-/dev/stdin}"
 name=$(basename "$path" "")
-
 echo $path
-echo $name
 
-nohup fswatch -0 --event Created $path > $name &
+nohup fswatch -0 --event Created $path | xargs -0 -n 1 -I {} ls -la --time-style=long-iso {} >> /home/baruque/fswatch_test/"cti_"$name &
 

@@ -9,13 +9,13 @@ jQuery(document).ready(function(){
 		text: false
 	})
 	.click(function animation (){
-		$.getJSON("http://127.0.0.1:8000/report/2014/09/"+day+"/0/0/2014/09/"+day+"/23/59/", function(data){
+		$.getJSON("http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/", function(data){
 			Map.update(data['markers'], data['count'], data['regions']);			
 			day = day + 1;
 			$( "#slider" ).slider( "value", day );
 						
 			if( day !=  monthSize){ // NUMBER OF DAYS IN A MONTH HERE										
-				setTimeout(animation, 500);
+				setTimeout(animation, 1000);
 			}
 		});
 	});	
@@ -32,13 +32,13 @@ $("#slider").slider({
 		day = ui.value;
 
 		if (day != 0) {
-			aux = "http://127.0.0.1:8000/report/2014/09/"+day+"/0/0/2014/09/"+day+"/23/59/";
+			aux = "http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/";
 			$.getJSON(aux, function(data){
 				Map.update(data['markers'], data['count'], data['regions']);
 			});
 		}
 		else{
-			aux = "http://127.0.0.1:8000/report/2014/08/"+day+"/0/0/2014/09/"+day+"/23/59/";
+			aux = "http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/07/"+day+"/23/59/";
 			Map.update(initialMonth['markers'], initialMonth['count'], initialMonth['regions']);
 		}	
 		
