@@ -16,6 +16,10 @@ def index(request):
 
 def report(request, startYear, startMonth, startDay, startHour, startMinute, endYear, endMonth, endDay, endHour, endMinute):	
 	#Undefined behaviour for invalid dates
+	if len(startDay) == 1:
+		startDay = '0'+startDay 
+	if len(endDay) == 1:
+		endDay = '0'+endDay 
 
 	start = time.time()	
 	startDate = startYear+'-'+startMonth+'-'+startDay+' '+startHour+':'+startMinute+':00'
