@@ -1,4 +1,21 @@
-var day = 0;
+var day = 1;
+var isPlaying = false
+
+// incremate(day, "2015/06/7"/){
+// 	return "2015/06/8"
+// }
+
+function animation(){
+	$.getJSON("http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/", function(data){
+		Map.update(data['markers'], data['count'], data['regions']);			
+		day = day + 1;
+		if (day == monthSize){
+			day = 1;
+		};
+		$( "#slider" ).slider( "value", day );
+		$( "#slider" ).slider( "option", "min", day );
+	});
+};
 
 jQuery(document).ready(function(){	
 	jQuery('#button-9')
@@ -8,23 +25,28 @@ jQuery(document).ready(function(){
 		},
 		text: false
 	})
-	.click(function animation (){
-		$.getJSON("http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/", function(data){
-			Map.update(data['markers'], data['count'], data['regions']);			
-			day = day + 1;
-			$( "#slider" ).slider( "value", day );
-						
-			if( day !=  monthSize){ // NUMBER OF DAYS IN A MONTH HERE										
-				setTimeout(animation, 1000);
+	.click(function (){
+		if (isPlaying) {
+			$(".ui-button-icon-primary", this).toggleClass("ui-icon-pause ui-icon-play");
+			isPlaying = false;
+		}else{
+			$(".ui-button-icon-primary", this).toggleClass("ui-icon-pause ui-icon-play");
+			isPlaying = true;
+		}
+		function timeout_loop (){
+			if (isPlaying){
+				animation();
+				setTimeout(timeout_loop, 500);
 			}
-		});
+		}; timeout_loop();
+
 	});	
 });
 
 // Implements the slider functionality
 $("#slider").slider({
 	value: day,
-	min: 0,
+	min: 1,
 	max: monthSize,
 	animate: true,
 	step: 1,
