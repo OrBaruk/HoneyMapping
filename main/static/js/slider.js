@@ -1,19 +1,49 @@
 var day = 1;
 var isPlaying = false
 
-// incremate(day, "2015/06/7"/){
-// 	return "2015/06/8"
-// }
+
+var startDate = moment(new Date(2015, 05, 1, 0, 0));
+var endDate = moment(new Date(2015, 05, 30, 23, 59));
+var timeout = 500; // miliseconds?
+
+var sliderVal = 0;
+var sliderMax = (endDate - startDate)/60000;
+var sliderStep = 60*24; // Minutes
+
+
+var queryStart = moment(new Date(2015, 05, 1, 0, 0)); 
+var queryEnd = moment(new Date(2015, 05, 1, 0, 0));
+queryEnd.add(sliderStep, 'minutes');
+
+
+console.log(sliderMax);
+
+console.log(startDate.add(1, 'hour'));
+console.log(queryStart.format("YYYY/MM/DD/HH/mm"));
+console.log(queryEnd.format("YYYY/MM/DD/HH/mm"));
 
 function animation(){
-	$.getJSON("http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/", function(data){
-		Map.update(data['markers'], data['count'], data['regions']);			
-		day = day + 1;
-		if (day == monthSize){
-			day = 1;
-		};
-		$( "#slider" ).slider( "value", day );
-		$( "#slider" ).slider( "option", "min", day );
+	console.log(sliderVal);
+	console.log(queryStart.format("YYYY/MM/DD/HH/mm"));
+	console.log(queryEnd.format("YYYY/MM/DD/HH/mm"));
+
+
+	sliderVal += sliderStep;
+	queryStart.add(sliderStep, 'minutes');
+	queryEnd.add(sliderStep, 'minutes');
+
+	if(sliderVal > sliderMax){
+		sliderVal = 0;
+		queryStart = moment(new Date(2015, 05, 1, 0, 0)); 
+		queryEnd = moment(new Date(2015, 05, 1, 0, 0));
+		queryEnd.add(sliderStep, 'minutes');
+	}
+
+	queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
+
+	$.getJSON(queryString, function(data){
+		Map.update(data['markers'], data['count'], data['regions']);
+		$( "#slider" ).slider( "value", sliderVal );
 	});
 };
 
@@ -36,33 +66,44 @@ jQuery(document).ready(function(){
 		function timeout_loop (){
 			if (isPlaying){
 				animation();
-				setTimeout(timeout_loop, 500);
+				setTimeout(timeout_loop, timeout);
 			}
 		}; timeout_loop();
 
 	});	
 });
 
-// Implements the slider functionality
 $("#slider").slider({
-	value: day,
-	min: 1,
-	max: monthSize,
+	value: sliderVal,
+	min: 0,
+	max: sliderMax,
 	animate: true,
-	step: 1,
+	step: sliderStep,
 	slide: function( event, ui){
-		day = ui.value;
+		sliderVal = ui.value;
 
-		if (day != 0) {
-			aux = "http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/06/"+day+"/23/59/";
-			$.getJSON(aux, function(data){
-				Map.update(data['markers'], data['count'], data['regions']);
-			});
-		}
-		else{
-			aux = "http://127.0.0.1:8000/report/2015/06/"+day+"/0/0/2015/07/"+day+"/23/59/";
-			Map.update(initialMonth['markers'], initialMonth['count'], initialMonth['regions']);
-		}	
-		
-	}
+		queryStart = moment(new Date(2015, 05, 1, 0, 0)); 
+		queryEnd = moment(new Date(2015, 05, 1, 0, 0));
+		queryStart.add(sliderVal, 'minutes');
+		queryEnd.add(sliderVal + sliderStep, 'minutes');
+
+		queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
+
+		$.getJSON(queryString, function(data){
+			Map.update(data['markers'], data['count'], data['regions']);
+			$( "#slider" ).slider( "value", sliderVal );
+		});
+	};
 });
+
+
+function reloadSlider(){
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+	//$( "#slider" ).slider( "option", "min", day );
+};
