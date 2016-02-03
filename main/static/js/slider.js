@@ -1,6 +1,4 @@
-var day = 1;
 var isPlaying = false
-
 
 var startDate = moment(new Date(2015, 05, 1, 0, 0));
 var endDate = moment(new Date(2015, 05, 30, 23, 59));
@@ -15,19 +13,7 @@ var queryStart = moment(new Date(2015, 05, 1, 0, 0));
 var queryEnd = moment(new Date(2015, 05, 1, 0, 0));
 queryEnd.add(sliderStep, 'minutes');
 
-
-console.log(sliderMax);
-
-console.log(startDate.add(1, 'hour'));
-console.log(queryStart.format("YYYY/MM/DD/HH/mm"));
-console.log(queryEnd.format("YYYY/MM/DD/HH/mm"));
-
 function animation(){
-	console.log(sliderVal);
-	console.log(queryStart.format("YYYY/MM/DD/HH/mm"));
-	console.log(queryEnd.format("YYYY/MM/DD/HH/mm"));
-
-
 	sliderVal += sliderStep;
 	queryStart.add(sliderStep, 'minutes');
 	queryEnd.add(sliderStep, 'minutes');
@@ -47,30 +33,20 @@ function animation(){
 	});
 };
 
-jQuery(document).ready(function(){	
-	jQuery('#button-9')
-	.button({
-		icons: { 
-			primary: 'ui-icon-play'
-		},
-		text: false
-	})
-	.click(function (){
-		if (isPlaying) {
-			$(".ui-button-icon-primary", this).toggleClass("ui-icon-pause ui-icon-play");
-			isPlaying = false;
-		}else{
-			$(".ui-button-icon-primary", this).toggleClass("ui-icon-pause ui-icon-play");
-			isPlaying = true;
+$('#play-toggle').click( function(){
+	$(this).find('i').toggleClass('glyphicon-play').toggleClass('glyphicon-pause');
+	if (isPlaying) {
+		isPlaying = false;
+	}else{
+    	isPlaying = true;
+	}
+	function timeout_loop (){
+		if (isPlaying){
+			animation();
+			setTimeout(timeout_loop, timeout);
 		}
-		function timeout_loop (){
-			if (isPlaying){
-				animation();
-				setTimeout(timeout_loop, timeout);
-			}
-		}; timeout_loop();
+	}; timeout_loop();
 
-	});	
 });
 
 $("#slider").slider({
@@ -93,7 +69,7 @@ $("#slider").slider({
 			Map.update(data['markers'], data['count'], data['regions']);
 			$( "#slider" ).slider( "value", sliderVal );
 		});
-	};
+	}
 });
 
 

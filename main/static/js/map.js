@@ -23,7 +23,7 @@ var Map = {
 			
 			// This section is where you can customize most of the looks of the map
 			$('#world-map').vectorMap({
-				map: 'world_mill_en',
+				map: 'world_mill',
 				// scaleColors: ['#C8EEFF', '#0071A4'],	
 				normalizeFunction: 'polynomial',
 				hoverOpacity: 0.7,
