@@ -10,7 +10,6 @@
 	<link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/jquery-ui.min.css"/>	 
 	<link rel="stylesheet" media="all" href="{{ STATIC_URL }}css/jquery-ui.theme.css"/>	 
 
-
 	<script src="{{ STATIC_URL }}jslib/jquery-2.2.0.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-2.0.3.min.js"></script>
 	<script src="{{ STATIC_URL }}jslib/jquery-jvectormap-world-mill.js"></script>
@@ -21,48 +20,61 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class='col-sm-6'>
-				<div class="form-group">
-					<div class='input-group date' id='datetimepicker1'>
-						<input type='text' class="form-control" />
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<script type="text/javascript">
-				$(function () {
-					$('#datetimepicker1').datetimepicker();
-				});
-			</script>
-		</div>
-	</div>
+
+	<p style="text-align:center;" id="curentTimeText">Current TIME!!!!</p>
+
+	<form>
+		<fieldset class="form-group">
+			<label for="inputTimeout">Timeout</label>
+			<input type="number" class="form-control" id="inputTimeout" value="500">
+			<small class="text-muted">miliseconds</small>
+		</fieldset>
+		<fieldset class="form-group">
+			<label for="inputSliderStep">Slider Step</label>
+			<input type="number" class="form-control" id="inputSliderStep" value="1"> 
+		</fieldset>
+		<fieldset class="form-group">
+			<label for="stepSelect"></label>
+			<select class="form-control" id="stepSelect">
+				<option>Minutes</option>
+				<option>Hours</option>
+				<option>Days</option>
+				<option>Months</option>
+			</select>
+		</fieldset>
+	    <div class='col-md-5'>
+	        <div class="form-group">
+	            <div class='input-group date' id='startDatePicker'>
+	                <input type='text' class="form-control" />
+	                <span class="input-group-addon">
+	                    <span class="glyphicon glyphicon-calendar"></span>
+	                </span>
+	            </div>
+	        </div>
+	    </div>
+	    <div class='col-md-5'>
+	        <div class="form-group">
+	            <div class='input-group date' id='endDatePicker'>
+	                <input type='text' class="form-control" />
+	                <span class="input-group-addon">
+	                    <span class="glyphicon glyphicon-calendar"></span>
+	                </span>
+	            </div>
+	        </div>
+	    </div>
+
+		<a id="reloadSlider" href="#" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i></a>
+	</form>
 
 	<div id="world-map" style="width: 1300px; height: 600px;" align="center"></div>
+
 	<div style="width: 1300px; height: 600px;" align="center">	
 		<a id="play-toggle" href="#" class="btn btn-default"><i class="glyphicon glyphicon-play"></i></a>
-
 		<div id="slider" style="width: 1200px; height: 10px; margin-top: 15px;" align="center"></div>	
 	</div>
 
 	<script type="text/javascript">
-		var initialMonth;
-
-		var d = new Date();
-
-		var curMonth = d.getMonth()+1;
-		console.log(d.getMonth()+1); 
-		var curDay = d.getDate(); 
-		console.log(d.getDate()); 
-		var monthSize = new Date(d.getYear(), d.getMonth()+1, 0).getDate(); 
-		console.log(new Date(d.getYear(), d.getMonth()+1, 0).getDate());
-
-		//$.getJSON("http://127.0.0.1:8000/report/2015/04/2/0/0/2015/10/2/23/59/", function(data){
 		$.getJSON("http://127.0.0.1:8000/report/2015/06/01/00/00/2015/06/30/23/59/", function(data){
-			initialMonth = data;
 			Map.init(data['markers'], data['count'], data['regions']);
 		});
 	</script>
