@@ -49,8 +49,8 @@ var Map = {
 						},
 						values: Map.colorData,
 						legend: {
-							horizontal : true,
-							title: "Color"
+							vertical : true,
+							cssClass: 'jvectormap-legend-bg',
 						}
 					},
 					{
@@ -62,8 +62,8 @@ var Map = {
 						scale: [5,15],
 						values: radiusData,
 						legend: {
-							horizontal: true,
-							title: "Size"
+							vertical: true,
+							cssClass: 'jvectormap-legend-bg',
 						}
 					}
 					],
@@ -74,7 +74,6 @@ var Map = {
 						legend: {
 							vertical: true,
 							cssClass: 'jvectormap-legend-bg',
-							title: 'Density',
 						}
 					}]
 				},

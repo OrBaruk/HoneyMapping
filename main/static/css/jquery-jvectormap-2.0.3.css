@@ -90,7 +90,8 @@ svg {
 }
 
 .jvectormap-legend-cnt-h .jvectormap-legend {
-    float: left;
+    /*float: left;*/
+    float: right;
     margin: 0 10px 10px 0;
     padding: 3px 3px 1px 3px;
 }
@@ -116,7 +117,7 @@ svg {
     height: 20px;
     width: 20px;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: middle; 
 }
 
 .jvectormap-legend-tick-text {
@@ -132,4 +133,8 @@ svg {
     vertical-align: middle;
     line-height: 20px;
     padding-left: 3px;
+}
+
+.jvectormap-legend-bg{
+    text-align: left;
 }
