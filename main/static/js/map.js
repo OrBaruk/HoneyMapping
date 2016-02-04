@@ -47,7 +47,11 @@ var Map = {
 							'ftpd' 			: '#66ffff',
 							'SipSession' 	: '#ff0000'
 						},
-						values: Map.colorData
+						values: Map.colorData,
+						legend: {
+							horizontal : true,
+							title: "Color"
+						}
 					},
 					{
 						attribute: 'fill-opacity',
@@ -56,17 +60,26 @@ var Map = {
 					{
 						attribute: 'r',
 						scale: [5,15],
-						values: radiusData
+						values: radiusData,
+						legend: {
+							horizontal: true,
+							title: "Size"
+						}
 					}
 					],
 
 					regions: [{
 						scale: ['#ffcccc','#996666'],
-						values: regionsData
+						values: regionsData,
+						legend: {
+							vertical: true,
+							cssClass: 'jvectormap-legend-bg',
+							title: 'Density',
+						}
 					}]
 				},
 
-				onMarkerLabelShow: function(event, label, index){
+				onMarkerTipShow: function(event, label, index){
 					label.html(
 						'<p>City: '+markers[index].city+'</p>'+
 						'<p>Type: '+markers[index].name+'</p>'+
@@ -77,7 +90,7 @@ var Map = {
 					);
 				},
 
-				onRegionLabelShow: function(event, label, code){
+				onRegionTipShow: function(event, label, code){
 					if (regionsData[code]){
 						label.html(
 							'<b>'+label.html()+'</b></br>'+
@@ -97,15 +110,7 @@ var Map = {
 	},
 
 	update: function (markers, radiusData, regionsData){
-		//TEM ALGUMA COISA MUITO ERRADA AQUI
-
-		//Map.obj.removeAllMarkers();
 		Map.obj.remove();
 		Map.init(markers, radiusData, regionsData)
-		//Map.obj.addMarkers(markers);
-		//Map.obj.series.markers[0].setValues(Map.colorData);
-		//Map.obj.series.markers[1].setValues(Map.opacityData);
-		//Map.obj.series.markers[2].setValues(radiusData);
-		//Map.obj.series.regions[0].setValues(regionsData);
 	}
 };
