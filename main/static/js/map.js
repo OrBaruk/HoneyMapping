@@ -34,6 +34,14 @@ var Map = {
 				markers: markers,
 
 				series: {
+					regions: [{
+						scale: ['#ffcccc','#996666'],
+						values: regionsData,
+						legend: {
+							vertical: true,
+							cssClass: 'jvectormap-legend-bg',
+						}
+					}],
 					markers: [
 					{
 						attribute: 'fill',
@@ -63,17 +71,7 @@ var Map = {
 						values: radiusData,
 						legend: {
 							vertical: true,
-							cssClass: 'jvectormap-legend-bg',
-						}
-					}
-					],
-
-					regions: [{
-						scale: ['#ffcccc','#996666'],
-						values: regionsData,
-						legend: {
-							vertical: true,
-							cssClass: 'jvectormap-legend-bg',
+							// cssClass: 'jvectormap-legend-bg',
 						}
 					}]
 				},
