@@ -7,13 +7,6 @@ var Map = {
 	init: function (markers, radiusData, regionsData){
 		
 		$(function(){
-			// console.log("markers");
-			// console.log(markers);
-			// console.log("radius");
-			// console.log(radiusData);
-			// console.log("regions");
-			// console.log(regionsData);
-
 			// Internal value used to set the same opacity for each marker
 			// This computation in the future should be done by the server and cached
 			for (var i = 0; i < markers.length; i++) {
@@ -30,12 +23,13 @@ var Map = {
 				hoverColor: false,
 
 				backgroundColor: '#6699cc',
-
+				
 				markers: markers,
 
 				series: {
 					regions: [{
-						scale: ['#ffcccc','#996666'],
+						//scale: ['#ffcccc','#996666'],
+						scale: ['#ffcccc','#662222'],
 						values: regionsData,
 						legend: {
 							vertical: true,
@@ -71,7 +65,11 @@ var Map = {
 						values: radiusData,
 						legend: {
 							vertical: true,
-							// cssClass: 'jvectormap-legend-bg',
+							cssClass: 'jvectormap-legend-bg',
+							labelRender: function(v){
+								// Small hack to properly show the legend
+								return "<h6>&nbsp&nbsp&nbsp&nbsp&nbsp"+v+"</h6>";
+							}
 						}
 					}]
 				},

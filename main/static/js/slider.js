@@ -21,13 +21,15 @@ function animateSlider(){
 		queryStart = new moment(startDate); 
 		queryEnd = new moment(startDate).add(sliderStep, "minutes").add(sliderStep, "minutes");
 	}
-	queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
+	queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
 
 	$.getJSON(queryString, function(data){
 		Map.update(data["markers"], data["count"], data["regions"]);
 		$( "#slider" ).slider( "value", sliderVal );
 
-		document.getElementById("curentTimeText").innerHTML = queryString;
+		document.getElementById("curentTimeText").innerHTML = "Report from "+ queryStart.format('MMMM Do YYYY, h:mm:ss a')+" to "+ queryEnd.format('MMMM Do YYYY, h:mm:ss a');
+
+		queryString;
 
 		if (isPlaying){
 			setTimeout(animateSlider, timeout);
@@ -68,7 +70,6 @@ $(function () {
 
 		startDate = $("#startDatePicker").data("DateTimePicker").date();
 		endDate = $("#endDatePicker").data("DateTimePicker").date();
-		timeout = document.getElementById("inputTimeout").value;
 		sliderVal = 0;
 		sliderMax = (endDate - startDate)/60000;
 
@@ -92,6 +93,26 @@ $(function () {
 			break;
 		}
 		
+		timeout = document.getElementById("inputTimeout").value;
+		unity = document.getElementById("timeoutSelect").value;
+		switch(unity){
+			case "Miliseconds":
+				timeout = timeout;
+			break;
+
+			case "Seconds":
+				timeout = timeout*1000;
+			break;
+
+			case "Minutes":
+				timeout = timeout*60000;
+			break;
+
+			case "Hours":
+				timeout = timeout*360000;
+			break;
+		}
+
 		queryStart = new moment(startDate); 
 		queryEnd = new moment(startDate).add(sliderStep, "minutes");
 		$( "#slider" ).slider( "option", 

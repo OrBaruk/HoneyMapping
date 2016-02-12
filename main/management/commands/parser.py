@@ -27,7 +27,6 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	for line in f.readlines():
 		rows = line.split()
 		if len(rows) != 8:# Checks if the line has correct parameters
-			print('oito?')
 			continue
 
 		aux	 = rows[7].split('-')
