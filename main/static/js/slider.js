@@ -1,15 +1,17 @@
 var isPlaying = false
 
-var startDate = moment(new Date(2015, 05, 1, 0, 0));
-var endDate = moment(new Date(2015, 05, 30, 23, 59));
-var timeout = 500; // miliseconds?
+var endDate = new Date();
+var startDate = new Date()
+startDate.setDate(startDate.getDate() - 1);
+
+var timeout = 500; // miliseconds
 
 var sliderVal = 0;
 var sliderMax = (endDate - startDate)/60000;
-var sliderStep = 60*24; // Minutes
+var sliderStep = 60; // Minutes
 
-var queryStart = new moment(startDate); 
-var queryEnd = new moment(startDate).add(sliderStep, "minutes");
+var queryEnd = new moment(endDate);
+var queryStart = new moment(endDate).subtract(1, "days"); 
 
 function animateSlider(){
 	sliderVal += sliderStep;
@@ -19,7 +21,7 @@ function animateSlider(){
 	if(sliderVal > sliderMax){
 		sliderVal = 0;
 		queryStart = new moment(startDate); 
-		queryEnd = new moment(startDate).add(sliderStep, "minutes").add(sliderStep, "minutes");
+		queryEnd = new moment(startDate).add(sliderStep, "minutes");
 	}
 	queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
 
@@ -93,23 +95,23 @@ $(function () {
 			break;
 		}
 		
-		timeout = document.getElementById("inputTimeout").value;
-		unity = document.getElementById("timeoutSelect").value;
-		switch(unity){
+		var aux = document.getElementById("inputTimeout").value;
+		var unity2 = document.getElementById("timeoutSelect").value;
+		switch(unity2){
 			case "Miliseconds":
-				timeout = timeout;
+				timeout = aux;
 			break;
 
 			case "Seconds":
-				timeout = timeout*1000;
+				timeout = aux*1000;
 			break;
 
 			case "Minutes":
-				timeout = timeout*60000;
+				timeout = aux*60000;
 			break;
 
 			case "Hours":
-				timeout = timeout*360000;
+				timeout = aux*360000;
 			break;
 		}
 
@@ -137,6 +139,8 @@ $(function () {
 			queryEnd.add(sliderVal + sliderStep, "minutes");
 
 			queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
+
+			document.getElementById("curentTimeText").innerHTML = "Report from "+ queryStart.format('MMMM Do YYYY, h:mm:ss a')+" to "+ queryEnd.format('MMMM Do YYYY, h:mm:ss a');
 
 			$.getJSON(queryString, function(data){
 				Map.update(data["markers"], data["count"], data["regions"]);

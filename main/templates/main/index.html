@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<h2><p style="text-align:center;" id="curentTimeText">Current TIME!!!!</p></h2>
+	<h2><p style="text-align:center;" id="curentTimeText"></p></h2>
 
 	
 
@@ -128,13 +128,17 @@
 	</form>
     </div>
 
+	<script src="{{ STATIC_URL }}js/map.js"></script>
+	<script src="{{ STATIC_URL }}js/slider.js"></script>
+
 	<script type="text/javascript">
-		$.getJSON("http://127.0.0.1:8000/report/2015/06/01/00/00/2015/06/01/23/59/", function(data){
+		queryString = "http://127.0.0.1:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
+
+		document.getElementById("curentTimeText").innerHTML = "Report from "+ queryStart.format('MMMM Do YYYY, h:mm:ss a')+" to "+ queryEnd.format('MMMM Do YYYY, h:mm:ss a');
+
+		$.getJSON(queryString, function(data){
 			Map.init(data['markers'], data['count'], data['regions']);
 		});
 	</script>
-
-	<script src="{{ STATIC_URL }}js/map.js"></script>
-	<script src="{{ STATIC_URL }}js/slider.js"></script>
 </body>
 </html>
