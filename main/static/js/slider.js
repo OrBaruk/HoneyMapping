@@ -78,10 +78,6 @@ $(function () {
 		var step = document.getElementById("inputSliderStep").value;
 		var unity = document.getElementById("stepSelect").value;
 		switch(unity){
-			case "Minutes":
-				sliderStep = step;
-			break;
-
 			case "Hours":
 				sliderStep = step*60;
 			break;
