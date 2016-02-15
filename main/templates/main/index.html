@@ -128,11 +128,16 @@
 	</form>
     </div>
 
+	<script type="text/javascript">
+		var server_address = {{ip1}}+"."+{{ip2}}+"."+{{ip3}}+"."+{{ip4}}+":"+{{port}};
+	</script>
+
+
 	<script src="{{ STATIC_URL }}js/map.js"></script>
 	<script src="{{ STATIC_URL }}js/slider.js"></script>
 
 	<script type="text/javascript">
-		queryString = "http://200.133.216.245:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
+		queryString = "http://"+server_address+"/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
 
 		document.getElementById("curentTimeText").innerHTML = "Report from "+ queryStart.format('MMMM Do YYYY, h:mm:ss a')+" to "+ queryEnd.format('MMMM Do YYYY, h:mm:ss a');
 

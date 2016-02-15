@@ -10,9 +10,14 @@ import json
 from django.db import connection
 import time
 
+import sys
+
 # Create your views here.
 def index(request):
-	return render(request, 'main/index.html')
+	ip_port = sys.argv[2].split(':')
+	ips = ip_port[0].split('.')
+	context = {'ip1': ips[0], 'ip2': ips[1], 'ip3': ips[2], 'ip4': ips[3], 'port': ip_port[1] }
+	return render(request, 'main/index.html', context)
 
 def report(request, startYear, startMonth, startDay, startHour, startMinute, endYear, endMonth, endDay, endHour, endMinute):	
 	#Undefined behaviour for invalid dates

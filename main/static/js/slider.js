@@ -23,7 +23,7 @@ function animateSlider(){
 		queryStart = new moment(startDate); 
 		queryEnd = new moment(startDate).add(sliderStep, "minutes");
 	}
-	queryString = "http://200.133.216.245:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
+	queryString = "http://"+server_address+"/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/");
 
 	$.getJSON(queryString, function(data){
 		Map.update(data["markers"], data["count"], data["regions"]);
@@ -138,7 +138,7 @@ $(function () {
 			queryStart.add(sliderVal, "minutes");
 			queryEnd.add(sliderVal + sliderStep, "minutes");
 
-			queryString = "http://200.133.216.245:8000/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
+			queryString = "http://"+server_address+"/report/"+queryStart.format("YYYY/MM/DD/HH/mm/")+queryEnd.format("YYYY/MM/DD/HH/mm/")
 
 			document.getElementById("curentTimeText").innerHTML = "Report from "+ queryStart.format('MMMM Do YYYY, h:mm:ss a')+" to "+ queryEnd.format('MMMM Do YYYY, h:mm:ss a');
 
