@@ -1,5 +1,8 @@
 #!/bin/bash
-nohup fswatch -0 --event Created /home/pakkun/honey/cti/dionaea/bistreams/ | xargs -0 -n 1 -I {} /home/baruque/HoneyMapping/launch_monitor.sh {} cti &
-nohup fswatch -0 --event Created /home/pakkun/honey/inpe/dionaea/bistreams/ | xargs -0 -n 1 -I {} /home/baruque/HoneyMapping/launch_monitor.sh {} inpe &
-nohup fswatch -0 --event Created /home/pakkun/honey/facom/dionaea/bistreams/ | xargs -0 -n 1 -I {} /home/baruque/HoneyMapping/launch_monitor.sh {} facom &
-nohup fswatch -0 --event Created /home/pakkun/honey/unicamp/dionaea/bistreams/ | xargs -0 -n 1 -I {} /home/baruque/HoneyMapping/launch_monitor.sh {} unicamp &
+nohup sh -c "fswatch -0 --event Created /home/baruque/tmp/tests/a1/ | xargs -0 -n 1 -I {} /home/baruque/tmp/launch_monitor.sh {} a1" </dev/null >/dev/null 2>&1 &
+echo $! >> /home/baruque/tmp/pid.txt
+
+nohup sh -c "fswatch -0 --event Created /home/baruque/tmp/tests/a2/ | xargs -0 -n 1 -I {} /home/baruque/tmp/launch_monitor.sh {} a2" </dev/null >/dev/null 2>&1 &
+echo $! >> /home/baruque/tmp/pid.txt
+
+
