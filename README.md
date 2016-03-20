@@ -1,10 +1,9 @@
 HoneyMapping
 ===============
-Makes use of django, and javascript to parse and display data of attacks at a
-honeypot infrastructure.
+Uses django and javascript to parse and display data of attacks to a honeypot
+infrastructure.
 
-
-Initial prototype implementation of HoneyMapping
+Instalation and Usage
 ------------------
 
 **Requirements:**
