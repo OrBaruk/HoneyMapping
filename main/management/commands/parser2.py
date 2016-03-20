@@ -27,14 +27,10 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 	for line in f.readlines():
 		rows = line.split()
 		if len(rows) != 8:# Checks if the line has correct parameters
-			print("!oito")
 			continue
 
-		#aux	 = rows[7].split('-')
-		logname = rows[7].split('/')
-		aux = (logname)[len(logname)-1].split('-')
+		aux	 = rows[7].split('-')
 		if len(aux) != 4: # Checks if the line has correct parameters
-			print("!quatro")
 			continue
 
 		print(line,end ='')
@@ -67,7 +63,8 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 				cityName 	= city,
 				countryCode = cc
 			)
-		l.save()
+		#l.save()
+		print(l)
 		s , created = Source.objects.get_or_create(
 				location  = l,
 				port	  = port,
@@ -75,10 +72,12 @@ def parse_logs(filepath, collectorName, geoIPLibpath):
 				protocol  = protc,
 			)
 		s.quantity = s.quantity + 1
-		s.save()
+		#s.save()
+		print(s)
 		a = Attack(
 				key		  = hashKey,
 				dateTime  = rows[5]+' '+rows[6],
 				source    = s,
 			)
-		a.save()
+		#a.save()
+		print(a)
